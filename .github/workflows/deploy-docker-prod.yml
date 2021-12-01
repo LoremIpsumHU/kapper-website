@@ -2,11 +2,12 @@ name: AUTO DEPLOY CONTAINER
 
 env:
    REPOSITORY_NAME: kapper-website
+   IMAGE_TAG: latest
 
 on:
   push:
     branches:
-      - ftr-cd
+      - main
 
 jobs:
   deploy:
