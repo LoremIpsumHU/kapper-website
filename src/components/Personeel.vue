@@ -5,7 +5,7 @@
         <img src="src/assets/Alisha.png" alt="Alisha">
         <div class="card-info">
           <div class="names">Alisha</div>
-          <div>Puntjes bij knippen <br> Nutteloze stagair</div>
+          <div>Puntjes bij knippen <br> Stagair</div>
         </div>
           
       </div>
@@ -30,7 +30,7 @@
       <img src="src/assets/Tobias.png" alt="Tobias">
       <div class="card-info">
         <div class="names">Tobias</div>
-        <div>Baarden</div>
+        <div>Baarden specialist</div>
       </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div id="stappen">
-      <div class="stap" id="slected">Stap 1 <br> Selecteren</div>
-      <div class="stap">Stap 2 <br> Datum</div>
-      <div class="stap">Stap 3 <br> Kapper</div>
-      <div class="stap">Stap 4 <br> Gegevens</div>
-      <div class="stap">Stap 5 <br> Bevestigen</div>
+    <div class="stappen">
+      <div class="stap" id="slected">Stap 1 <br><span>Behandelingen</span></div>
+      <div class="stap">Stap 2 <br><span>Datum</span></div>
+      <div class="stap">Stap 3 <br><span>Kapper</span></div>
+      <div class="stap">Stap 4 <br><span>Gegevens</span></div>
+      <div class="stap">Stap 5 <br><span>Bevestigen</span></div>
     </div>
 
   </div>
@@ -15,16 +15,7 @@
 export default {
     data () {
       return {
-        stap1: 'Stap 1 Selecteren',
-        stap2: 'Stap 2 Datum',
-        stap3: 'Stap 3 Kapper',
-        stap4: 'Stap 4 Gegevens', 
-        stap5: 'Stap 5 Bevestigen',
-        uitleg1: 'Slecteren',
-        uitleg2: 'Datum',
-        uitleg3: 'Kapper',
-        uitleg4: 'Gegevens',
-        uitleg5: 'Bevestigen'
+
       }
     }
 }
@@ -35,16 +26,22 @@ div{
   padding: 0 0 0;
 }
 
-#stappen {
+.stappen {
   display: flex;
-  gap: 2em;
+  flex-direction: row;
+  justify-content: space-evenly;
   }
 
 .stap {
-  padding: 1em;
+  font-size: 1.5vw;
+  margin-bottom: 1em;
 }
 
 #slected{
   color: #CF4D36;
+}
+
+span{
+  font-size: 2vw;
 }
 </style>
