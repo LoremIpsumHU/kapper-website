@@ -5,7 +5,7 @@
         <img src="src/assets/Alisha.png" alt="Alisha">
         <div class="card-info">
           <div class="names">Alisha</div>
-          <div>Puntjes bij knippen <br> Stagair</div>
+          <div>Puntjes bij knippen <br> Stagair <br> 10% korting</div>
         </div>
           
       </div>
@@ -47,7 +47,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #colmn{
   display: flex;
   flex-direction: row;

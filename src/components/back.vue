@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button class="btn" @click="this.$store.commit('increment')"><span>Volgende stap </span></button>
+        <button class="btn" @click="this.$store.commit('subtracked')"><span>Vorige stap </span></button>
     </div>
 </template>
 
@@ -32,16 +32,18 @@ export default {
   width: 14vw;
 }
 
-.btn span:after {
+.btn span:before {
   content: '\279C';
+  display: inline-block;
+  transform: rotate(180deg);
   opacity: 0;
   top: 0;
-  margin-left: 5px;
+  margin-right: 5px;
   transition: 0.5s;
 }
 
-.btn:hover span:after {
+.btn:hover span:before {
   opacity: 1;
-  right: 0;
+  left: 0;
 }
 </style>

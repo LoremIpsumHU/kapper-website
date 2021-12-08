@@ -1,13 +1,12 @@
 <template>
   <div>
-    <img id="jdklogo" src="../assets/jdklogo.svg" alt="Logo jdk">
     <stappenplan></stappenplan>
     <div class="row">
       <div class="col">
         <div class="kopje">Jouw gekozen behandelingen</div>
         <dropdownmenu></dropdownmenu>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
-        <nextpage v-on:click="hide1"></nextpage>
+        <nextpage></nextpage>
       </div>
       <div class="col">
         <div class="kopje">Selecteren</div>
@@ -28,25 +27,16 @@ export default {
     'dropdownmenu': Dropdownmenu,
     'nextpage': Nextpage
   },
+  
   data (){
     return{
-        hide1: function(){
-            
+
         }
-    }
   }
 }
 </script>
 
 <style scoped>
-#jdklogo{
-  width: 15%;
-  height: 100px;
-  margin-top: 2em;
-  margin-left: 16px;
-  margin-bottom: 2em;
-}
-
 .kopje{
   font-size: 3vw;
 }

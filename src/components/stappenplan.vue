@@ -1,11 +1,12 @@
 <template>
   <div>
+    <img id="jdklogo" src="../assets/jdklogo.svg" alt="Logo jdk">
     <div class="stappen">
-      <div class="stap" id="slected">Stap 1 <br><span>Behandelingen</span></div>
-      <div class="stap">Stap 2 <br><span>Datum</span></div>
-      <div class="stap">Stap 3 <br><span>Kapper</span></div>
-      <div class="stap">Stap 4 <br><span>Gegevens</span></div>
-      <div class="stap">Stap 5 <br><span>Bevestigen</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 1}">Stap 1 <br><span>Behandelingen</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 2}">Stap 2 <br><span>Datum</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 3}">Stap 3 <br><span>Kapper</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 4}">Stap 4 <br><span>Gegevens</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 5}">Stap 5 <br><span>Bevestigen</span></div>
     </div>
 
   </div>
@@ -17,7 +18,7 @@ export default {
       return {
 
       }
-    }
+    },
 }
 </script>
 
@@ -37,11 +38,19 @@ div{
   margin-bottom: 1em;
 }
 
-#slected{
+.slected{
   color: #CF4D36;
 }
 
 span{
   font-size: 2vw;
+}
+
+#jdklogo{
+  width: 15%;
+  height: 100px;
+  margin-top: 2em;
+  margin-left: 16px;
+  margin-bottom: 2em;
 }
 </style>
