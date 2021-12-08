@@ -4,7 +4,7 @@ import { createStore } from "vuex";
 
 const store = createStore({
     state:{
-        current_step: 1,
+        current_step: 4,
     },
     getters:{},
     mutations:{
