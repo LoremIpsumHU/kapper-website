@@ -2,47 +2,49 @@
     <div>
         <stappenplan></stappenplan>
         <div class="row">
-            <div>
-                <div class="info">
-                    <div>Naam:</div>
-                    <input class="input" type="text" placeholder="Jouw naam hier">
+            <div class="left">
+                <div class="costumerinfo">
+                    <div>Naam: {{ name }}</div>
+                    <div>Mail adress: {{ mail }}</div>
+                    <div>Telefoon nummer: {{ phone }}</div>
+                    <div>Bijzonderheden: {{ bijzonderheden }}</div>
                 </div>
-                <div class="info">
-                    <div>Mail adress:</div>
-                    <input class="input" type="text" placeholder="voorbeeld@yourmail.com">
+                <div class="costumerbarber">
+                    <div>{{ barber }} gaat jouw knippen</div>
                 </div>
-                <div class="info">
-                    <div>Telefoon nummer:</div>
-                    <input class="input" type="number" placeholder="06 1234 5678">
-                </div>
-                <div class="row" id="btn">
-                    <back></back>   
-                    <nextpage></nextpage>                 
-                </div>
-            </div>
-            
-            <div id="bijzonderheden">
-                <div>Bijzonderheden:</div>
-                <input class="input" id="specialinput" type="text" placeholder="Vul hier bijzonderheden in waar wij rekening mee moeten houden">
+            </div>           
+            <div class="costumerdatum">
+                <div>Jaar: {{ jaar }}</div>
+                <div>Maand: {{ month }}</div>
+                <div>Dag: {{ day }}</div>
+                <div>Tijd: {{ time }}</div>
             </div>
         </div>
+        <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>  
     </div>
 </template>
 
 <script>
 import Stappenplan from './stappenplan.vue'
 import Nextpage from './nextpage.vue'
-import back from './back.vue'
+
 
 export default {
     components: {
         'stappenplan': Stappenplan,
         'nextpage': Nextpage,
-        'back': back,
     },
     data() {
         return{
-            
+            name: 'Piet',
+            mail: 'piet@jandekapper.nl',
+            phone: '06 2345 3453',
+            bijzonderheden: 'Ik ben heel kort dus de stoelen moeten we hoog kunnen staan anders moet de kapper bukken.',
+            jaar: '2021',
+            month: 'December',
+            day: '21',
+            time: '14:11',
+            barber: 'Tobias'
         }
     }
 }
@@ -55,28 +57,7 @@ export default {
     justify-content: space-evenly;
 }
 
-.input {
-    border: none;
-    border-bottom: solid 2px #3498DB;
-    border-radius: 4px;
+.left {
     width: 40vw;
-    padding: 5px;
-}
-
-.info{
-    margin-top: 2em;
-}
-
-#specialinput {
-    box-sizing: border-box;
-    border: solid 2px #3498DB;
-    resize: vertical;
-    padding: 5px;
-    height: 40vh;
-    width: 40vw;
-}
-
-#btn {
-    margin-top: 2em;
 }
 </style>

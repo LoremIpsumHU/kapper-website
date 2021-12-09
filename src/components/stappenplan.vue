@@ -4,9 +4,8 @@
     <div class="stappen">
       <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 1}">Stap 1 <br><span>Behandelingen</span></div>
       <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 2}">Stap 2 <br><span>Datum</span></div>
-      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 3}">Stap 3 <br><span>Kapper</span></div>
-      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 4}">Stap 4 <br><span>Gegevens</span></div>
-      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 5}">Stap 5 <br><span>Bevestigen</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 3}">Stap 3 <br><span>Gegevens</span></div>
+      <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 4}">Stap 4 <br><span>Bevestigen</span></div>
     </div>
 
   </div>

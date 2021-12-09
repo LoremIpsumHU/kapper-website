@@ -1,11 +1,12 @@
 import { def } from "@vue/shared";
 import { createStore } from "vuex";
-
+import createPersistedState from "vuex-persistedstate";
 
 const store = createStore({
     state:{
-        current_step: 4,
+        current_step: 1,
     },
+    plugins: [createPersistedState()],
     getters:{},
     mutations:{
         increment (state) {

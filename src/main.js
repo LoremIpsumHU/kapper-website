@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import store from "./store/index"
-import Datepicker from 'vue3-date-time-picker';
-import 'vue3-date-time-picker/dist/main.css';
+import VCalendar from 'v-calendar';
 
-createApp(App).use(store).mount('#app')
+var app = createApp(App);
+
+app.use(store);
+app.use(VCalendar, {})
+
+app.mount('#app')

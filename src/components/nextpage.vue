@@ -1,11 +1,12 @@
 <template>
     <div>
-        <button class="btn" @click="this.$store.commit('increment')"><span>Volgende stap </span></button>
+        <button id="button" class="btn"><span class="weetnogniet">{{ content }}</span></button>
     </div>
 </template>
 
 <script>
 export default {
+    props: ['content', 'styling'],
     data(){
         return{
           
@@ -32,16 +33,17 @@ export default {
   width: 14vw;
 }
 
-.btn span:after {
+.btn next:after {
   content: '\279C';
-  opacity: 0;
+  opacity: 1;
   top: 0;
-  margin-left: 5px;
-  transition: 0.5s;
 }
 
-.btn:hover span:after {
+.btn back:after {
+  content: '\279C';
+  display: inline-block;
+  transform: rotate(180deg);
   opacity: 1;
-  right: 0;
+  top: 0;
 }
 </style>

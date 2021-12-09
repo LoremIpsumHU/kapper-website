@@ -4,7 +4,6 @@
     <stap2 v-show="current_step == 2"></stap2>
     <stap3 v-show="current_step == 3"></stap3>
     <stap4 v-show="current_step == 4"></stap4>
-    <stap5 v-show="current_step == 5"></stap5>
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import stap1 from './components/stap1.vue'
 import stap2 from './components/stap2.vue'
 import stap3 from './components/stap3.vue'
 import stap4 from './components/stap4.vue'
-import stap5 from './components/stap5.vue'
 // import Vue from 'vue'
 // import VueRouter from 'vue-router'
 
@@ -25,7 +23,6 @@ export default {
     'stap2': stap2,
     'stap3': stap3,
     'stap4': stap4,
-    'stap5': stap5,
   },
 
   data(){

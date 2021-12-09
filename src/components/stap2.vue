@@ -1,31 +1,38 @@
 <template>
     <div>
         <stappenplan></stappenplan>
-        <datepicker class="datepicker"></datepicker>
-        <personeel></personeel>
-        <nextpage></nextpage>
-        <back></back>
+        <div class="row">
+            <div class="datepicker">
+                <v-date-picker locale="nl" :first-day-of-week="2" :min-date='new Date()' :disabled-dates='{ weekdays: [1, 7] }'
+                v-model="date" mode="dateTime" :minute-increment="5" is24hr is-expanded>
+                </v-date-picker>
+            <div class="row" id="btn"> 
+            <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>  
+            <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
+            </div>
+            </div>
+            <personeel></personeel>
+        </div>
     </div>
 </template>
 
 <script>
 import Stappenplan from './stappenplan.vue';
-import Datepicker from 'vue3-date-time-picker';
-import 'vue3-date-time-picker/dist/main.css';
 import Nextpage from './nextpage.vue';
-import back from './back.vue';
+import personeel from './personeel.vue'
 
 export default {
     components:{
         'stappenplan': Stappenplan,
-        'Datepicker': Datepicker,
         'nextpage': Nextpage,
-        'back': back,
+        'personeel': personeel,
     },
     data(){
-        return{
-
-        }
+        let date = new Date();
+        date.setMinutes(0, 0, 0);
+            return{
+                date,
+            }
     },
   methods: {
 
@@ -34,8 +41,15 @@ export default {
 </script>
 
 <style scoped>
-.datepicker{
-    margin-top: 20px;
-    width: 50vw;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5em;
+}
+
+.datepicker {
+    width: 40vw;
+    filter: drop-shadow(1px 1px 0.5px #a0a0a0);
 }
 </style>

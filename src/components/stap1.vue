@@ -6,11 +6,11 @@
         <div class="kopje">Jouw gekozen behandelingen</div>
         <dropdownmenu></dropdownmenu>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
-        <nextpage></nextpage>
+        <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
       </div>
       <div class="col">
         <div class="kopje">Selecteren</div>
-        <div class="text">Maak een afspraak in 5 simple stappen</div>
+        <div class="text">Maak een afspraak in 4 simpele stappen</div>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@ export default {
   
   data (){
     return{
-
+  
         }
   }
 }
