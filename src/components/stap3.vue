@@ -15,7 +15,7 @@
                     <div>Telefoon nummer:</div>
                     <input class="input" type="number" placeholder="06 1234 5678 (optioneel)">
                 </div>
-                <div class="row" id="btn">
+                <div class="button" id="btn">
                 <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>      
                 <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>        
                 </div>
@@ -80,5 +80,14 @@ export default {
 
 #btn {
     margin-top: 2em;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position: absolute;
+    bottom: 10vh;
+    left: 10vw;
 }
 </style>

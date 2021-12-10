@@ -30,22 +30,24 @@
                         <div>{{ day }} / {{ month }} / {{ jaar }} om {{ time }}</div>                    
                     </div>
                 </div>
-                    <div class="row">
-                        <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage> 
-                        <nextpage content="Verstuur" styling="next"></nextpage>  
-                    </div>
                 </div>
             </div>
             <div>
-                <a href="https://calendar.google.com/calendar/r/eventedit?text=Kapperafspraak&dates=20211210T100000Z/20211210T110000Z&details=Afspraak+met+Tobias&location=Jan+de+Kapper+-+Heidelberglaan+15
-">
-                <nextpage content="Google agenda"></nextpage>
-                </a>
-                <a href="https://www.youtube.com/watch?v=iik25wqIuFo">
-                    <nextpage content="Apple agenda"></nextpage>
-                </a>
+                <div class="center">
+                    <a href="https://calendar.google.com/calendar/r/eventedit?text=Kapperafspraak&dates=20211210T100000Z/20211210T110000Z&details=Afspraak+met+Tobias&location=Jan+de+Kapper+-+Heidelberglaan+15">
+                    <nextpage content="Google agenda"></nextpage>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=iik25wqIuFo"> <!-- https://apps.apple.com/nl/app/agenda/id1108185179 Voor de apple agenda app link-->
+                        <nextpage content="Apple agenda"></nextpage>
+                    </a>
+                </div>
+                <iframe class="kaart" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.747387001234!2d5.173788551309156!3d52.084328279634605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1snl!2snl!4v1639135059025!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>           
         </div>
+    <div class="button">
+        <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage> 
+        <nextpage content="Verstuur" styling="next"></nextpage>  
+    </div>
     </div>
 </template>
 
@@ -94,13 +96,33 @@ export default {
 }
 
 .info {
-    border: solid 2px #808080;
+    border: solid 2px #3498DB;
     border-radius: 5px;
+    background-color: #1e92df3b;
     margin-top: 0.2em;
-    background-color: rgba(24, 138, 214, 0.548);
 }
 
 .left {
-    width: 20vw;
+    width: 40vw;
+}
+
+.kaart {
+    margin-top: 1em;
+    width: 30vw;
+    height: 37vh;
+}
+.center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position: absolute;
+    bottom: 10vh;
+    left: 10vw;
 }
 </style>

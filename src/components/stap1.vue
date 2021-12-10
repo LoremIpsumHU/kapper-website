@@ -6,7 +6,7 @@
         <div class="kopje">Jouw gekozen behandelingen</div>
         <dropdownmenu></dropdownmenu>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
-        <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
+        <nextpage class="button" content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
       </div>
       <div class="col">
         <div class="kopje">Selecteren</div>
@@ -57,5 +57,14 @@ export default {
   border: solid 1px;
   padding: 1em;
   margin-top: 1em;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position: absolute;
+    bottom: 10vh;
+    left: 26.2vw;
 }
 </style>

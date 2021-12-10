@@ -6,12 +6,12 @@
                 <v-date-picker locale="nl" :first-day-of-week="2" :min-date='new Date()' :disabled-dates='{ weekdays: [1, 7] }'
                 v-model="date" mode="dateTime" :minute-increment="5" is24hr is-expanded>
                 </v-date-picker>
-            <div class="row" id="btn"> 
-            <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>  
-            <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
-            </div>
             </div>
             <personeel></personeel>
+        </div>
+        <div class="button" id="btn"> 
+            <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>  
+            <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
         </div>
     </div>
 </template>
@@ -51,5 +51,14 @@ export default {
 .datepicker {
     width: 40vw;
     filter: drop-shadow(1px 1px 0.5px #a0a0a0);
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position: absolute;
+    bottom: 10vh;
+    left: 10vw;
 }
 </style>
