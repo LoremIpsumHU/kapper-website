@@ -2,7 +2,7 @@
   <div id="colmn">
     <div id="col">
       <div id="Alisha" class="card">
-        <img src="src/assets/Alisha.png" alt="Alisha">
+        <img src="../assets/Alisha.png" alt="Alisha">
         <div class="card-info">
           <div class="names">Alisha</div>
           <div>Puntjes bij knippen <br> Stagair <br> 10% korting</div>
@@ -10,7 +10,7 @@
           
       </div>
       <div id="Kevin" class="card under">
-        <img src="src/assets/Kevin.png" alt="Kevin">
+        <img src="../assets/Kevin.png" alt="Kevin">
         <div class="card-info">
           <div class="names">Kevin</div>
           <div>Haar kleuren</div>
@@ -20,14 +20,14 @@
 
     <div id="col">
       <div id="Pieter" class="card">
-        <img src="src/assets/Pieter.png" alt="Pieter">
+        <img src="../assets/Pieter.png" alt="Pieter">
         <div class="card-info">  
           <div class="names">Pieter</div>
           <div>Dames <br> Praten</div>
         </div>
       </div>
       <div id="Tobias" class="card under" >
-        <img src="src/assets/Tobias.png" alt="Tobias">
+        <img src="../assets/Tobias.png" alt="Tobias">
         <div class="card-info">
           <div class="names">Tobias</div>
           <div>Baarden specialist</div>
