@@ -19,7 +19,7 @@
 <script>
 import Stappenplan from './stappenplan.vue';
 import Nextpage from './nextpage.vue';
-import personeel from './personeel.vue'
+import personeel from '../components/personeel.vue'
 
 export default {
     components:{
