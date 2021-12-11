@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button id="button" class="btn"><span class="weetnogniet">{{ content }}</span></button>
+        <button id="button" class="btn"><span class="btn1">{{ content }}</span></button>
     </div>
 </template>
 
@@ -33,13 +33,13 @@ export default {
   width: 14vw;
 }
 
-.btn next:after {
+.btn1:after {
   content: '\279C';
   opacity: 1;
   top: 0;
 }
 
-.btn back:after {
+.btn2:before {
   content: '\279C';
   display: inline-block;
   transform: rotate(180deg);

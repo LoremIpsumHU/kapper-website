@@ -17,15 +17,15 @@
 </template>
 
 <script>
-import Stappenplan from './stappenplan.vue'
-import Dropdownmenu from './dropdownmenu.vue'
-import Nextpage from './nextpage.vue'
+import stappenplan from './stappenplan.vue'
+import dropdownmenu from './dropdownmenu.vue'
+import nextpage from './nextpage.vue'
 
 export default {
   components: {
-    'stappenplan': Stappenplan,
-    'dropdownmenu': Dropdownmenu,
-    'nextpage': Nextpage
+    'stappenplan': stappenplan,
+    'dropdownmenu': dropdownmenu,
+    'nextpage': nextpage
   },
   
   data (){

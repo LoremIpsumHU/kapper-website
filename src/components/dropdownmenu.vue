@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import Multiselect from '@vueform/multiselect'
+import multiselect from '@vueform/multiselect'
 
 export default {
   components:{
-    'multiselect': Multiselect,
+    'multiselect': multiselect,
   },
     data(){
         return{

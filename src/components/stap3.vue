@@ -13,7 +13,7 @@
                 </div>
                 <div class="info">
                     <div>Telefoon nummer:</div>
-                    <input class="input" type="number" placeholder="06 1234 5678 (optioneel)">
+                    <input class="input" type="number" placeholder="06 1234 5678">
                 </div>
                 <div class="button" id="btn">
                 <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>      
