@@ -17,7 +17,7 @@
                         <div> {{ phone }}</div>                        
                     </div>
                     <div class="costumerbarber row1 info">
-                        <div>Kaper:</div>
+                        <div>Kapper:</div>
                         <div>{{ barber }}</div>
                     </div>
                     <div class="Bijzonder info">

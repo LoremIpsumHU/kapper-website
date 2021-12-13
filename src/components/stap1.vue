@@ -6,7 +6,7 @@
         <div class="kopje">Jouw gekozen behandelingen</div>
         <dropdownmenu></dropdownmenu>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
-        <nextpage class="button" content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>
+        <nextpage class="button" content="Volgende" styling="next" @click="this.$store.commit('increment')"></nextpage>
       </div>
       <div class="col">
         <div class="kopje">Selecteren</div>

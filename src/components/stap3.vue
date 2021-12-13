@@ -17,7 +17,7 @@
                 </div>
                 <div class="button" id="btn">
                 <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>      
-                <nextpage content="Volegende" styling="next" @click="this.$store.commit('increment')"></nextpage>        
+                <nextpage content="Volgende" styling="next" @click="this.$store.commit('increment')"></nextpage>        
                 </div>
             </div>
             
