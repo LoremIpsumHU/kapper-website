@@ -6,15 +6,15 @@
                 <div class="costumerinfo">
                     <div class="row1 info">
                         <div>Naam: </div>
-                        <div> {{ name }}</div>                        
+                        <div> {{ personId }}</div>                        
                     </div>
                     <div class="row1 info">
                         <div>Mail adress: </div>
-                        <div> {{ mail }}</div>                        
+                        <div> {{ email }}</div>                        
                     </div>
                     <div class="row1 info">
                         <div>Telefoon nummer: </div>
-                        <div> {{ phone }}</div>                        
+                        <div> {{ number }}</div>                        
                     </div>
                     <div class="costumerbarber row1 info">
                         <div>Kapper:</div>
@@ -22,12 +22,12 @@
                     </div>
                     <div class="Bijzonder info">
                         <div>Bijzonderheden:</div>
-                        <div class="row1"> {{ bijzonderheden }}</div>                        
+                        <div class="row1"> {{ extra }}</div>                   
                     </div>
                     <div class="costumerdatum info">
                     <div class="row1">
                         <div>Jaar: </div>
-                        <div>{{ day }} / {{ month }} / {{ jaar }} om {{ time }}</div>                    
+                        <div>{{ day }} / {{ month }} / {{ year }} om {{ time }}</div>                    
                     </div>
                 </div>
                 </div>
@@ -46,7 +46,7 @@
         </div>
     <div class="button">
         <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage> 
-        <nextpage content="Verstuur" styling="next"></nextpage>  
+        <nextpage @click="handleSubmit" content="Verstuur" styling="next"></nextpage>  
     </div>
     </div>
 </template>
@@ -63,20 +63,25 @@ export default {
     },
     data() {
         return{
-            name: 'Piet',
-            mail: 'piet@jandekapper.nl',
-            phone: '06 2345 3453',
-            bijzonderheden: 'Ik ben heel kort dus de stoelen moeten we hoog kunnen staan anders moet de kapper bukken.',
-            jaar: '2021',
-            month: 'December',
-            day: '21',
-            time: '14:11',
-            barber: 'Tobias'
+            personId: this.$store.state.personId,
+            email: '',
+            number: '',
+            extra: '',
+            barber: '',
+            day: '',
+            month: '',
+            year: '',
+            time: ''
         }
     },
     computed: {
 
-    }
+    },
+    methods: {
+        handleSubmit() {
+            console.log('submitted')
+        }
+    },
 }
 </script>
 

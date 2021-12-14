@@ -1,31 +1,31 @@
 <template>
     <div>
         <stappenplan></stappenplan>
-        <div class="row">
+        <form class="row">
             <div>
                 <div class="info">
                     <div class="required">Naam:</div>
-                    <input class="input" type="text" placeholder="Jouw naam hier" required>
+                    <input class="input" type="text" placeholder="Jouw naam hier" required v-model="personId">
                 </div>
                 <div class="info">
                     <div class="required">Mail adress:</div>
-                    <input class="input" type="text" placeholder="voorbeeld@yourmail.com" required>
+                    <input class="input" type="email" placeholder="voorbeeld@yourmail.com" required v-model="email">
                 </div>
                 <div class="info">
                     <div>Telefoon nummer:</div>
-                    <input class="input" type="number" placeholder="06 1234 5678">
+                    <input class="input" type="number" placeholder="06 1234 5678" v-model="number">
                 </div>
                 <div class="button" id="btn">
                 <nextpage content="Vorige" styling="next" @click="this.$store.commit('subtracked')"></nextpage>      
-                <nextpage content="Volgende" styling="next" @click="this.$store.commit('increment')"></nextpage>        
+                <nextpage type="submit" content="Volgende" styling="next" @click="this.$store.commit('increment'); pushInfo()"></nextpage>        
                 </div>
             </div>
             
             <div id="bijzonderheden">
                 <div>Bijzonderheden:</div>
-                <textarea class="input" id="specialinput" type="text" placeholder="Vul hier bijzonderheden in waar wij rekening mee moeten houden"></textarea>
+                <textarea class="input" id="specialinput" type="text" v-model="extra" placeholder="Vul hier bijzonderheden in waar wij rekening mee moeten houden"></textarea>
             </div>
-        </div>
+        </form>
     </div>
 </template>
 
@@ -40,9 +40,25 @@ export default {
     },
     data() {
         return{
-            
+            email: '',
+            personId: '',
+            number: '',
+            extra: '',
         }
-    }
+    },
+    methods: {
+        pushInfo() {
+            console.log(this.personId)
+            return this.$store.state.personId
+            console.log(this.email)
+            return this.$store.state.email
+            console.log(this.number)
+            return this.$store.state.number
+            console.log(this.extra)
+            return this.$store.state.extra
+        }
+        
+    },
 }
 </script>
 

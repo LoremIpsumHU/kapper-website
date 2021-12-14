@@ -5,9 +5,15 @@ import createPersistedState from "vuex-persistedstate";
 const store = createStore({
     state:{
         current_step: 1,
+        personId: '',
+        email: '',
+        number: '',
+        extra: '',
     },
     plugins: [createPersistedState()],
-    getters:{},
+    getters:{
+
+    },
     mutations:{
         increment (state) {
             state.current_step++
@@ -16,7 +22,9 @@ const store = createStore({
             state.current_step--
         }
     },
-    actions:{},
+    actions:{
+        
+    },
 });
 
 export default store;
