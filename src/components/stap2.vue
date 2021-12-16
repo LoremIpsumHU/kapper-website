@@ -27,7 +27,7 @@
       <nextpage
         content="Volgende"
         styling="next"
-        @click="this.$store.commit('increment')"
+        @click="setDate()"
       ></nextpage>
     </div>
   </div>
@@ -51,7 +51,16 @@ export default {
       date,
     };
   },
-  methods: {},
+  methods: {
+    setDate (){
+      this.$store.state.day = '17'
+      this.$store.state.month = '12'
+      this.$store.state.year = '2021'
+      this.$store.state.time = '14:00'
+      
+      this.$store.commit('increment')
+    }
+  },
 };
 </script>
 

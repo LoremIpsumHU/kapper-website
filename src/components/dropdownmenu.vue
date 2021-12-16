@@ -1,5 +1,5 @@
 <template>
-    <div id="dropdown">
+    <div id="dropdown" class="unselectable">
         <multiselect v-model="Value" mode="tags" :closeOnSelect="false" :searchable="true" :ceateTag='true' :options="[
           {value: 'Knippen', label: 'Knippen'},
           {value: 'Kleuren', label: 'Kleuren'},
@@ -43,6 +43,15 @@ export default {
   box-shadow: none;
 }
 
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
 </style>
 
 <style src="@vueform/multiselect/themes/default.css">

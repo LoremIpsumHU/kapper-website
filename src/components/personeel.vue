@@ -1,7 +1,7 @@
 <template>
-  <div id="colmn">
+  <div id="colmn" class="unselectable">
     <div id="col">
-      <div id="Alisha" class="card">
+      <div id="Alisha" class="card " @click="setKapper('Alisha')">
         <img src="../assets/Alisha.png" alt="Alisha">
         <div class="card-info">
           <div class="names">Alisha</div>
@@ -9,7 +9,7 @@
         </div>
           
       </div>
-      <div id="Kevin" class="card under">
+      <div id="Kevin" class="card under" @click="setKapper('Kevin')">
         <img src="../assets/Kevin.png" alt="Kevin">
         <div class="card-info">
           <div class="names">Kevin</div>
@@ -19,14 +19,14 @@
     </div>
 
     <div id="col">
-      <div id="Pieter" class="card">
+      <div id="Pieter" class="card" @click="setKapper('Pieter')">
         <img src="../assets/Pieter.png" alt="Pieter">
         <div class="card-info">  
           <div class="names">Pieter</div>
           <div>Dames <br> Praten</div>
         </div>
       </div>
-      <div id="Tobias" class="card under" >
+      <div id="Tobias" class="card under" @click="setKapper('Tobias')">
         <img src="../assets/Tobias.png" alt="Tobias">
         <div class="card-info">
           <div class="names">Tobias</div>
@@ -43,6 +43,15 @@ export default {
     return{
 
     }
+  },
+  methods: {
+    setKapper: function(kapper) {
+      if (this.$store.state.barber !== ''){
+        document.getElementById(this.$store.state.barber).classList.remove('selected')
+      }
+      this.$store.state.barber = kapper
+      document.getElementById(this.$store.state.barber).classList.add('selected')
+    },
   }
 }
 </script>
@@ -73,6 +82,7 @@ img{
   border: solid 1px #808080;
   border-radius: 5px;
   filter: drop-shadow(1px 1px 0.5px #a0a0a0);
+  cursor: pointer;
 }
 
 .names{
@@ -81,5 +91,18 @@ img{
 
 .card-info{
   padding-left: 10px;
+}
+
+.card.selected {
+  border: solid 2px coral;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 </style>
