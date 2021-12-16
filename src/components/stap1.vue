@@ -6,7 +6,12 @@
         <div class="kopje">Jouw gekozen behandelingen</div>
         <dropdownmenu></dropdownmenu>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
-        <nextpage class="button" content="Volgende" styling="next" @click="this.$store.commit('increment')"></nextpage>
+        <nextpage
+          class="button"
+          content="Volgende"
+          styling="next"
+          @click="this.$store.commit('increment')"
+        ></nextpage>
       </div>
       <div class="col">
         <div class="kopje">Selecteren</div>
@@ -17,31 +22,30 @@
 </template>
 
 <script>
-import stappenplan from './stappenplan.vue'
-import dropdownmenu from './dropdownmenu.vue'
-import nextpage from './nextpage.vue'
+import stappenplan from "./stappenplan.vue";
+import dropdownmenu from "./dropdownmenu.vue";
+import nextpage from "./nextpage.vue";
 
 export default {
   components: {
-    'stappenplan': stappenplan,
-    'dropdownmenu': dropdownmenu,
-    'nextpage': nextpage
+    stappenplan: stappenplan,
+    dropdownmenu: dropdownmenu,
+    nextpage: nextpage,
   },
-  
-  data (){
-    return{
-  
-        }
-  }
-}
+
+  data() {
+    return {};
+  },
+  methods: {},
+};
 </script>
 
 <style scoped>
-.kopje{
+.kopje {
   font-size: 3vw;
 }
 
-.text{
+.text {
   font-size: 1.5vw;
 }
 
@@ -52,19 +56,19 @@ export default {
   gap: 5em;
 }
 
-.behandeling{
-  background-color: #3498DB;
+.behandeling {
+  background-color: #3498db;
   border: solid 1px;
   padding: 1em;
   margin-top: 1em;
 }
 
 .button {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-    position: absolute;
-    bottom: 10vh;
-    left: 26.2vw;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  position: absolute;
+  bottom: 10vh;
+  left: 26.2vw;
 }
 </style>

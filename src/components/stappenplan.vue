@@ -1,6 +1,9 @@
 <template>
   <div>
-    <img id="jdklogo" src="../assets/jdklogo.svg" alt="Logo jdk">
+    <div class="logo">
+      <img id="jdklogo" src="../assets/jdklogo.svg" alt="Logo jdk">      
+    </div>
+
     <div class="stappen">
       <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 1}">Stap 1 <br><span>Behandelingen</span></div>
       <div class="stap" v-bind:class="{ slected: this.$store.state.current_step == 2}">Stap 2 <br><span>Datum</span></div>
@@ -26,6 +29,10 @@ div{
   padding: 0 0 0;
 }
 
+.logo {
+  text-align: center;
+}
+
 .stappen {
   display: flex;
   flex-direction: row;
@@ -35,6 +42,7 @@ div{
 .stap {
   font-size: 1.5vw;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .slected{
@@ -49,7 +57,6 @@ span{
   width: 15%;
   height: 100px;
   margin-top: 2em;
-  margin-left: 16px;
   margin-bottom: 2em;
 }
 </style>

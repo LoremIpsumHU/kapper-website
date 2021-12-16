@@ -30,7 +30,7 @@ export default {
   transition: all 0.5s;
   cursor: pointer;
   margin-top: 1em;
-  width: 14vw;
+  width: 12ch;
 }
 
 .btn1:after {
@@ -45,5 +45,11 @@ export default {
   transform: rotate(180deg);
   opacity: 1;
   top: 0;
+}
+
+@media screen and (max-width: 400px)  {
+  .btn {
+    font-size: 0.5rem;
+  }
 }
 </style>

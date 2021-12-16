@@ -9,6 +9,11 @@ const store = createStore({
         email: '',
         number: '',
         extra: '',
+        barber: '',
+        day: '',
+        month: '',
+        year: '',
+        time: '',
     },
     plugins: [createPersistedState()],
     getters:{
