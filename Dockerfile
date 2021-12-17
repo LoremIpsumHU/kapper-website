@@ -1,15 +1,14 @@
-# develop stage
-FROM node:11.1-alpine as develop-stage
+FROM node:14.2.0-alpine as build
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
+ENV PATH /app/node_modules/.bin:$PATH
+COPY package.json /app/package.json
+RUN npm install --silent
 RUN npm install @vue/cli -g
-COPY . .
-# build stage
-FROM develop-stage as build-stage
+COPY . /app
 RUN npm run build
-# production stage
-FROM nginx:1.15.7-alpine as production-stage
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+
+# production environment
+FROM nginx:1.16.0-alpine
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"] 
