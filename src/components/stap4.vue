@@ -37,14 +37,14 @@
           <a
             href="https://calendar.google.com/calendar/r/eventedit?text=Kapperafspraak&dates=20211210T100000Z/20211210T110000Z&details=Afspraak+met+Tobias&location=Jan+de+Kapper+-+Heidelberglaan+15"
           >
-            <nextpage content="Google agenda"></nextpage>
+            <nextpage class="agenda" content="Google agenda"></nextpage>
           </a>
           <a href="https://www.youtube.com/watch?v=iik25wqIuFo">
-            <!-- https://apps.apple.com/nl/app/agenda/id1108185179 Voor de apple agenda app link-->
-            <nextpage content="Apple agenda"></nextpage>
+            <!-- https://apps.apple.com/nl/app/agenda/id1108185179 Voor de apple agenda app link -->
+            <nextpage class="agenda" content="Apple agenda"></nextpage>
           </a>
         </div>
-        <!-- <iframe class="kaart" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.747387001234!2d5.173788551309156!3d52.084328279634605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1snl!2snl!4v1639135059025!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+        <iframe class="kaart" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.747387001234!2d5.173788551309156!3d52.084328279634605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1snl!2snl!4v1639135059025!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
     <div class="button">
@@ -149,9 +149,9 @@ export default {
   left: 10vw;
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
   .row {
     font-size: 0.8rem;
   }
-}
+} */
 </style>
