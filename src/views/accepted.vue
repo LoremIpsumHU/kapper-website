@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Home view</h3>
+        
     </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     
 </style>
