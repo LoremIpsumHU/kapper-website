@@ -8,10 +8,10 @@
 </template>
 
 <script> 
-import stap1 from '../components/stap1.vue'
-import stap2 from '../components/stap2.vue'
-import stap3 from '../components/stap3.vue'
-import stap4 from '../components/stap4.vue'
+import stap1 from '../components/Reserveren/stap1.vue'
+import stap2 from '../components/Reserveren/stap2.vue'
+import stap3 from '../components/Reserveren/stap3.vue'
+import stap4 from '../components/Reserveren/stap4.vue'
 
 export default {
   components:{

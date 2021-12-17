@@ -1,9 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/reserveren">Reserveren</router-link>
-    </div>
+    <nav>
+      <div class="navbar">
+        <ul>
+          <li><a><router-link to="/">Producten</router-link></a></li>
+          <li><a><router-link to="/reserveren">Reserveren</router-link></a></li>
+        </ul>        
+      </div>
+
+    </nav>
     <router-view />
   </div>
 </template>
@@ -27,16 +32,36 @@ export default {
 </script>
 
 <style>
-#nav {
-  padding: 30px;
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0 0;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.navbar{
+    flex: 1;
+    text-align: right;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    z-index: 1000000;
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 50px;
+    position: relative;
+}
+
+.navbar ul li a{
+    color: #CF4D36;
+    text-decoration: none;
+    font-size: 35px;
 }
 </style>
