@@ -3,6 +3,7 @@ FROM node:11.1-alpine as develop-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
+RUN npm install @vue/cli -g
 COPY . .
 # build stage
 FROM develop-stage as build-stage
