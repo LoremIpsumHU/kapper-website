@@ -59,4 +59,13 @@ span{
   margin-top: 2em;
   margin-bottom: 2em;
 }
+
+@media screen and (max-width: 400px)  {
+  .stap {
+    font-size: 1rem;
+  }
+  span {
+    font-size: 4vw;
+  }
+}
 </style>

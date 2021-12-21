@@ -54,7 +54,6 @@
         content="Volgende"
         styling="next"
         @click="
-          pushInfo();
           valid();
         "
       ></nextpage>
@@ -65,8 +64,8 @@
 <script>
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
-// import useValidate from '@vuelidate/core'
-// import { required } from '@vuelidate/validators'
+import useVuelidate from '@vuelidate/core';
+import { required, email, minLength } from '@vuelidate/validators';
 
 export default {
   components: {
@@ -74,9 +73,10 @@ export default {
     nextpage: Nextpage,
   },
 
+  setup: () => ({ v$: useVuelidate() }),
+
   data() {
     return {
-      // v$: useValidate(),
       email: "",
       personId: "",
       number: "",
@@ -84,28 +84,30 @@ export default {
     };
   },
 
-  methods: {
-    pushInfo(event) {
-      this.$store.commit("increment");
-
-      this.$store.state.personId = this.personId;
-      this.$store.state.email = this.email;
-      this.$store.state.number = this.number;
-      this.$store.state.extra = this.extra;
-
-      if (event) event.preventDefault();
-    },
-    // valid() {
-    //   alert("it works");
-    // },
+  validations() {
+    return {
+      personId: { required, minLength: minLength(2) },
+      email: { required, email },
+    }
   },
 
-  // validations() {
-  //   return {
-  //     personId: { required },
-  //     email: { required },
-  //   }
-  // }
+  methods: {
+    valid(event) {
+      this.v$.$validate()
+      if (!this.v$.$error) {
+        this.$store.commit("increment");
+
+        this.$store.state.personId = this.personId;
+        this.$store.state.email = this.email;
+        this.$store.state.number = this.number;
+        this.$store.state.extra = this.extra;
+
+        if (event) event.preventDefault();
+      } else {
+        alert('Je hebt niet alle benodigde velden in gevuld')
+      }
+    },
+  },
 };
 </script>
 

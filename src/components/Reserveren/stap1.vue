@@ -65,6 +65,10 @@ export default {
   margin-top: 1em;
 }
 
+.col {
+  justify-content: center;
+}
+
 #sector1 {
   height: 50vh;
 }
@@ -73,5 +77,15 @@ export default {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 400px)  {
+  .kopje {
+    font-size: 5vw;
+  }
+
+  .text {
+    font-size: 3vw;
+  }
 }
 </style>
