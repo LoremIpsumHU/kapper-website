@@ -1,7 +1,7 @@
 <template>
   <div>
     <stappenplan></stappenplan>
-    <form class="row">
+    <form id="sector1" class="row">
       <div>
         <div class="info">
           <div class="required">Naam:</div>
@@ -30,19 +30,6 @@
             v-model="number"
           />
         </div>
-        <div class="button" id="btn">
-          <nextpage
-            content="Vorige"
-            styling="next"
-            @click="this.$store.commit('subtracked')"
-          ></nextpage>
-          <nextpage
-            type="submit"
-            content="Volgende"
-            styling="next"
-            @click=pushInfo
-          ></nextpage>
-        </div>
       </div>
 
       <div id="bijzonderheden">
@@ -56,26 +43,47 @@
         ></textarea>
       </div>
     </form>
+    <div id="sector2">
+      <nextpage
+        content="Vorige"
+        styling="next"
+        @click="this.$store.commit('subtracked')"
+      ></nextpage>
+      <nextpage
+        type="submit"
+        content="Volgende"
+        styling="next"
+        @click="
+          pushInfo();
+          valid();
+        "
+      ></nextpage>
+    </div>
   </div>
 </template>
 
 <script>
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
+// import useValidate from '@vuelidate/core'
+// import { required } from '@vuelidate/validators'
 
 export default {
   components: {
     stappenplan: Stappenplan,
     nextpage: Nextpage,
   },
+
   data() {
     return {
+      // v$: useValidate(),
       email: "",
       personId: "",
       number: "",
       extra: "",
     };
   },
+
   methods: {
     pushInfo(event) {
       this.$store.commit("increment");
@@ -87,7 +95,17 @@ export default {
 
       if (event) event.preventDefault();
     },
+    valid() {
+      alert("it works");
+    },
   },
+
+  // validations() {
+  //   return {
+  //     personId: { required },
+  //     email: { required },
+  //   }
+  // }
 };
 </script>
 
@@ -123,16 +141,9 @@ export default {
   width: 40vw;
 }
 
-#btn {
-  margin-top: 2em;
-}
-
-.button {
+#sector2 {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 2em;
-  position: absolute;
-  bottom: 10vh;
-  left: 10vw;
+  justify-content: left;
 }
 </style>

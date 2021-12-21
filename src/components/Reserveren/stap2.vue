@@ -1,7 +1,7 @@
 <template>
   <div>
     <stappenplan></stappenplan>
-    <div class="row">
+    <div id="sector1" class="row">
       <div class="datepicker">
         <v-date-picker
           locale="nl"
@@ -18,7 +18,7 @@
       </div>
       <personeel></personeel>
     </div>
-    <div class="button" id="btn">
+    <div id="sector2">
       <nextpage
         content="Vorige"
         styling="next"
@@ -77,12 +77,9 @@ export default {
   filter: drop-shadow(1px 1px 0.5px #a0a0a0);
 }
 
-.button {
+#sector2 {
+  width: 100%;
   display: flex;
-  flex-direction: row;
-  gap: 2em;
-  position: absolute;
-  bottom: 10vh;
-  left: 10vw;
+  justify-content: left;
 }
 </style>

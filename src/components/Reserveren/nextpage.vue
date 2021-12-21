@@ -33,20 +33,6 @@ export default {
   width: 15vw;
 }
 
-/* .btn1:after {
-  content: '\279C';
-  opacity: 1;
-  top: 0;
-}
-
-.btn2:before {
-  content: '\279C';
-  display: inline-block;
-  transform: rotate(180deg);
-  opacity: 1;
-  top: 0;
-} */
-
 /* @media screen and (max-width: 400px)  {
   .btn {
     font-size: 0.5rem;
