@@ -65,9 +65,13 @@ export default {
   margin-top: 1em;
 }
 
+#sector1 {
+  height: 50vh;
+}
+
 #sector2 {
   width: 100%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 </style>

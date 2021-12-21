@@ -1,7 +1,7 @@
 <template>
   <div>
     <stappenplan></stappenplan>
-    <div class="row">
+    <div id="sector1" class="row">
       <div class="left">
         <div class="costumerinfo">
           <div class="row1 info">
@@ -140,10 +140,15 @@ export default {
   justify-content: space-evenly;
 }
 
+#sector1 {
+  height: 50vh;
+}
+
 #sector2 {
   width: 100%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  gap: 1em;
 }
 
 /* @media screen and (max-width: 400px) {

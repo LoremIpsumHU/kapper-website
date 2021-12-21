@@ -77,9 +77,14 @@ export default {
   filter: drop-shadow(1px 1px 0.5px #a0a0a0);
 }
 
+#sector1 {
+  height: 50vh;
+}
+
 #sector2 {
   width: 100%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  gap: 1em;
 }
 </style>

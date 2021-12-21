@@ -95,9 +95,9 @@ export default {
 
       if (event) event.preventDefault();
     },
-    valid() {
-      alert("it works");
-    },
+    // valid() {
+    //   alert("it works");
+    // },
   },
 
   // validations() {
@@ -141,9 +141,14 @@ export default {
   width: 40vw;
 }
 
+#sector1 {
+  height: 50vh;
+}
+
 #sector2 {
   width: 100%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  gap: 1em;
 }
 </style>
