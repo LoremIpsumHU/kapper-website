@@ -82,10 +82,17 @@ export default {
 @media screen and (max-width: 400px)  {
   .kopje {
     font-size: 5vw;
+    text-align: center;
   }
 
   .text {
     font-size: 3vw;
+    text-align: center;
+  }
+  .row {
+    gap: 1em;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }
 </style>
