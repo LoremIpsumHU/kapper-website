@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="logo">
-      <img id="jdklogo" src="/src/assets/jdklogo.svg" alt="Logo jdk">      
+      <img id="jdklogo" src="../../assets/jdklogo.svg" alt="Logo jdk">      
     </div>
 
     <div class="stappen">
