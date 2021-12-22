@@ -21,7 +21,7 @@ export default {
 #logo{
   width: 100%;
   height: 300px;
-  margin-top: 10em;
+  margin-top: 20em;
 }
 .header{
   justify-content: center;
@@ -31,7 +31,7 @@ export default {
     min-height: 100vh;
     width: 100%;
     background-image: linear-gradient(rgba(76, 77, 78, 0.479),
-    rgba(4, 9, 30, 0.596)),url(/src/assets/kap.png);
+    rgba(4, 9, 30, 0.596)),url(../../assets/kap.png);
     background-position: center;
     background-size: cover;
     position: relative;
