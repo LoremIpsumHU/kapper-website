@@ -5,7 +5,7 @@
         <img src="../../assets/Alisha.png" alt="Alisha">
         <div class="card-info">
           <div class="names">Alisha</div>
-          <div>Puntjes bij knippen <br> Stagair <br> 10% korting</div>
+          <div class="info">Puntjes bij knippen <br> Stagair -10%</div>
         </div>
           
       </div>
@@ -13,7 +13,7 @@
         <img src="../../assets/Kevin.png" alt="Kevin">
         <div class="card-info">
           <div class="names">Kevin</div>
-          <div>Haar kleuren</div>
+          <div class="info">Haar kleuren</div>
         </div>
       </div>
     </div>
@@ -23,14 +23,14 @@
         <img src="../../assets/Pieter.png" alt="Pieter">
         <div class="card-info">  
           <div class="names">Pieter</div>
-          <div>Dames <br> Praten</div>
+          <div class="info">Dames <br> Praten</div>
         </div>
       </div>
       <div id="Tobias" class="card under" @click="setKapper('Tobias')">
         <img src="../../assets/Tobias.png" alt="Tobias">
         <div class="card-info">
           <div class="names">Tobias</div>
-          <div>Baarden specialist</div>
+          <div class="info">Baarden specialist</div>
         </div>
       </div>
     </div>
@@ -78,7 +78,7 @@ img{
   flex-direction: row;
   background-color: #FEFEFE;
   padding: 5px;
-  width: 17vw;
+  width: 24vw;
   border: solid 1px #808080;
   border-radius: 5px;
   filter: drop-shadow(1px 1px 0.5px #a0a0a0);
@@ -104,5 +104,26 @@ img{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media screen and (max-width: 400px)  {
+  #colmn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-content: center;
+  }
+  .names {
+    font-size: 1.5em;
+  }
+  .card {
+    width: 90vw;
+  }
+  .info {
+    font-size: 1em;
+  }
+  .under {
+  margin-top: 2vh;
+  }
 }
 </style>

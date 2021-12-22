@@ -7,7 +7,6 @@
           <li><a><router-link to="/reserveren">Reserveren</router-link></a></li>
         </ul>        
       </div>
-
     </nav>
     <router-view />
   </div>

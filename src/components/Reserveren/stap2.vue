@@ -69,7 +69,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 5em;
+  gap: 1em;
 }
 
 .datepicker {
@@ -86,5 +86,23 @@ export default {
   display: flex;
   justify-content: center;
   gap: 1em;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 400px)  {
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .datepicker {
+    width: 90vw;
+  }
+  #sector1 {
+    height: auto;
+  }
+  #sector2 {
+    width: auto;
+  }
 }
 </style>

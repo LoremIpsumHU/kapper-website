@@ -30,12 +30,13 @@ export default {
   transition: all 0.5s;
   cursor: pointer;
   margin-top: 1em;
-  width: 15ch;
+  width: 15vw;
 }
 
 @media screen and (max-width: 400px)  {
   .btn {
     font-size: 0.7rem;
+    width: 15ch;
   }
 }
 </style>

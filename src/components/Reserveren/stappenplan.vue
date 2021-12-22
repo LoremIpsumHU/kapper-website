@@ -54,7 +54,7 @@ span{
 }
 
 #jdklogo{
-  width: 15%;
+  width: auto;
   height: 100px;
   margin-top: 2em;
   margin-bottom: 2em;
