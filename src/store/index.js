@@ -5,26 +5,28 @@ import createPersistedState from "vuex-persistedstate";
 const store = createStore({
     state:{
         current_step: 1,
-        personId: '',
-        email: '',
-        number: '',
-        extra: '',
+        user_data: {
+            personId: '',
+            email: '',
+            number: '',
+            extra: '',
+        },
         barber: '',
-        day: '',
-        month: '',
-        year: '',
-        time: '',
+        treatments: [],
+        date: [{  }],
     },
-    plugins: [createPersistedState()],
     getters:{
 
     },
     mutations:{
         increment (state) {
             state.current_step++
-          },
+        },
         subtracked (state) {
             state.current_step--
+        },
+        UPDATE_FORM_DATA(state, value) {
+            state.forms[value.form] = value.data;
         }
     },
     actions:{

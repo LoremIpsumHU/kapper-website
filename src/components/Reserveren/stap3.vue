@@ -97,10 +97,10 @@ export default {
       if (!this.v$.$error) {
         this.$store.commit("increment");
 
-        this.$store.state.personId = this.personId;
-        this.$store.state.email = this.email;
-        this.$store.state.number = this.number;
-        this.$store.state.extra = this.extra;
+        this.$store.state.user_data.personId = this.personId;
+        this.$store.state.user_data.email = this.email;
+        this.$store.state.user_data.number = this.number;
+        this.$store.state.user_data.extra = this.extra;
 
         if (event) event.preventDefault();
       } else {

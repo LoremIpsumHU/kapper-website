@@ -22,7 +22,7 @@
       <nextpage
         content="Vorige"
         styling="next"
-        @click="this.$store.commit('subtracked')"
+        @click="pageBack()"
       ></nextpage>
       <nextpage
         content="Volgende"
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import personeel from "./personeel.vue";
@@ -53,12 +54,17 @@ export default {
   },
   methods: {
     setDate (){
-      this.$store.state.day = '17'
-      this.$store.state.month = '12'
-      this.$store.state.year = '2021'
-      this.$store.state.time = '14:00'
+      // this.$store.state.day = '17'
+      // this.$store.state.month = '12'
+      // this.$store.state.year = '2021'
+      // this.$store.state.time = '14:00'
       
       this.$store.commit('increment')
+    },
+    pageBack (event){
+      if (event) event.preventDefault();
+
+      this.$store.commit('subtracked')
     }
   },
 };

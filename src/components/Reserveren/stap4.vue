@@ -6,15 +6,15 @@
         <div class="costumerinfo">
           <div class="row1 info">
             <div>Naam:</div>
-            <div> {{ personId }}</div>
+            <div> {{ user_data.personId }}</div>
           </div>
           <div class="row1 info">
             <div>Mail adress:</div>
-            <div>{{ email }}</div>
+            <div>{{ user_data.email }}</div>
           </div>
           <div class="row1 info">
             <div>Telefoon nummer:</div>
-            <div>{{ number }}</div>
+            <div>{{ user_data.number }}</div>
           </div>
           <div class="costumerbarber row1 info">
             <div>Kapper:</div>
@@ -22,7 +22,7 @@
           </div>
           <div class="Bijzonder info">
             <div>Bijzonderheden:</div>
-            <div class="row1">{{ extra }}</div>
+            <div class="row1">{{ user_data.extra }}</div>
           </div>
           <div class="costumerdatum info">
             <div class="row1">
@@ -48,6 +48,7 @@
         styling="next"
       ></nextpage>
     </div>
+    <div>{{forms}}</div>
   </div>
 </template>
 
@@ -65,15 +66,10 @@ export default {
     return {};
   },
   computed: mapState({
-    personId: "personId",
-    email: "email",
-    number: "number",
-    extra: "extra",
+    user_data: "user_data",
     barber: "barber",
-    day: "day",
-    month: "month",
-    year: "year",
-    time: "time",
+    date: '',
+    // treatments:''
   }),
   methods: {
     handleSubmit() {
