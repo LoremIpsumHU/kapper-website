@@ -27,7 +27,7 @@
           <div class="costumerdatum info">
             <div class="row1">
               <div>Jaar:</div>
-              <div>{{ day }} / {{ month }} / {{ year }} om {{ time }}</div>
+              <div>{{ date }}</div>
             </div>
           </div>
         </div>
