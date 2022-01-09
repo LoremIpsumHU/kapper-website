@@ -30,8 +30,8 @@ export default {
 .main{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(76, 77, 78, 0.479),
-    rgba(4, 9, 30, 0.596)),url(../../assets/kap.png);
+    background-image: linear-gradient(rgba(68, 74, 129, 0.336),
+    rgba(255, 255, 255, 0.178)),url(../../assets/kap.png);
     background-position: center;
     background-size: cover;
     position: relative;
