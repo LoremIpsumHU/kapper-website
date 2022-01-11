@@ -1,5 +1,5 @@
 <template>
-<div class=divide>
+<div class=divider>
     <img id= "divider" src="../../assets/divider.jpg" alt="">
 </div>
 <section class="info-old">
@@ -53,14 +53,15 @@ export default {
     min-height: 7.5vh;
     width: 80%;
     margin: 30px;
+    margin-right: 100px;
 }
-.divide{
-    text-align: center;    
+.divider{
+    text-align: center;
 }
 .row-old{
     display: flex;
     text-align: center;
-    padding: 20px
+    padding: 20px;
 }
 .info-old{
     width: 75%;
@@ -122,7 +123,7 @@ export default {
 }
 h1{
     font-size: 29px;
-    text-shadow: 10px 10px 4px #00000056;
+    text-shadow: 3px 3px 4px #00000056;
 }
 
 p{
