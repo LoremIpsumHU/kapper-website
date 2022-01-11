@@ -10,15 +10,17 @@
             type="text"
             placeholder="Jouw naam hier"
             v-model="personId"
+            required
           />
         </div>
         <div class="info">
           <div class="required">Mail adress:</div>
           <input
             class="input"
-            type="text"
+            type="email"
             placeholder="voorbeeld@yourmail.com"
             v-model="email"
+            required
           />
         </div>
         <div class="info">

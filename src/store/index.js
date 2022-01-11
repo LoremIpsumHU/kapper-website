@@ -13,7 +13,7 @@ const store = createStore({
         },
         barber: '',
         treatments: [],
-        date: [{  }],
+        date: '',
     },
     getters:{
 
