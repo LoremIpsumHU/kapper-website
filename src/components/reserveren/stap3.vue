@@ -55,9 +55,7 @@
         type="submit"
         content="Volgende"
         styling="next"
-        @click="
-          valid();
-        "
+        @click="valid()"
       ></nextpage>
     </div>
   </div>
@@ -97,18 +95,21 @@ export default {
     valid(event) {
       this.v$.$validate()
       if (!this.v$.$error) {
-        this.$store.commit("increment");
 
-        this.$store.state.user_data.personId = this.personId;
-        this.$store.state.user_data.email = this.email;
-        this.$store.state.user_data.number = this.number;
-        this.$store.state.user_data.extra = this.extra;
-
+        this.$store.state.user_data.personId = this.personId
+        this.$store.state.user_data.email = this.email
+        this.$store.state.user_data.number = this.number
+        this.$store.state.user_data.extra = this.extra
+        
+        this.nextPage()
         if (event) event.preventDefault();
       } else {
-        alert('Je hebt niet alle benodigde velden in gevuld')
+        alert('Naam of mail is niet gedeldig')
       }
     },
+    nextPage() {
+      this.$store.commit("increment")
+    }
   },
 };
 </script>

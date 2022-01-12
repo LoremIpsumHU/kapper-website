@@ -73,10 +73,10 @@ export default {
       Object.keys(state).forEach((key) => {
         newState[key] = null;
       });
+      alert('U ontvangt zo snel mogelijk een bevestegings mail')
       newState['current_step'] = 1
 
       this.$store.replaceState(newState);
-      console.log("submitted");
     },
     formatDate(date) {
       var d = new Date(date),

@@ -10,7 +10,7 @@
               mode="tags"
               placeholder="Kies uw behandeling"
               :searchable="true"
-              :createTag="true"
+              :createTag="false"
               :closeOnSelect="false"
               :options="options"
               class="multiselect-blue"
@@ -52,7 +52,7 @@ export default {
 
   data() {
     return {
-      treatments: [],
+      treatments: ['Niks'],
       options: ['Knippen', 'Kleuren', 'Wassen']
       
     };
@@ -67,7 +67,8 @@ export default {
       this.$store.commit('UPDATE_FORM_DATA', {
         data: this.treatments
       })
-      this.setTreatments()
+      if (this.treatments == 'Niks');
+      else this.setTreatments()
     },
     setTreatments() {
       this.$store.commit('increment')
