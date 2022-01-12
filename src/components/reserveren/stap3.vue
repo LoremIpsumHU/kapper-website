@@ -27,7 +27,7 @@
           <div>Telefoon nummer:</div>
           <input
             class="input"
-            type="text"
+            type="number"
             placeholder="06 1234 5678"
             v-model="number"
           />

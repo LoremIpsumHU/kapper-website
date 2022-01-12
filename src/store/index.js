@@ -26,8 +26,8 @@ const store = createStore({
             state.current_step--
         },
         UPDATE_FORM_DATA(state, value) {
-            state.forms[value.form] = value.data;
-        }
+            state.treatments = value.data
+        },
     },
     actions:{
         

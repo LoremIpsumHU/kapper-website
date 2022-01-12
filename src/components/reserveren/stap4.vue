@@ -5,28 +5,25 @@
       <div class="left">
         <div class="costumerinfo">
           <div class="info">
-            <div>Naam:</div>
-            <div> {{ user_data.personId }}</div>
+            <div>Naam: {{ user_data.personId }}</div>
           </div>
           <div class="info">
-            <div>Mail adress:</div>
-            <div>{{ user_data.email }}</div>
+            <div>Mail adress: {{ user_data.email }}</div>
           </div>
           <div class="info">
-            <div>Telefoon nummer:</div>
-            <div>{{ user_data.number }}</div>
-          </div>
-          <div class="info">
-            <div>Kapper:</div>
-            <div>{{ barber ? barber : "Geen voorkeur." }}</div>
+            <div>Telefoon nummer: {{ user_data.number ? user_data.number : "Geen telefoonnummer." }}</div>
           </div>
           <div class="info">  
-            <div>Datum:</div>
-            <div>{{ formatDate(Date(date)) }}</div>
+            <div>Behandelingen: {{ formatTreatments(treatments) }}</div>
           </div>
           <div class="info">
-            <div>Bijzonderheden:</div>
-            <div>{{ user_data.extra ? user_data.extra : "Geen bijzonderheden."}}</div>
+            <div>Kapper: {{ barber ? barber : "Geen voorkeur." }}</div>
+          </div>
+          <div class="info">  
+            <div>Datum: {{ formatDate(date) }}</div>
+          </div>
+          <div class="info">
+            <div>Bijzonderheden: {{ user_data.extra ?  + user_data.extra : "Geen bijzonderheden."}}</div>
           </div>
         </div>
       </div>
@@ -66,7 +63,7 @@ export default {
     user_data: "user_data",
     barber: "barber",
     date: "date",
-    // treatments:''
+    treatments:'treatments'
   }),
   methods: {
     handleSubmit() {
@@ -86,16 +83,19 @@ export default {
       month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
       year = d.getFullYear(),
-      hour = d.getHours(),
-      minute = d.getMinutes();
+      hour = '' + d.getHours(),
+      minute = '' + d.getMinutes();
 
-      if (month.length < 2) 
-          month = '0' + month;
-      if (day.length < 2) 
-          day = '0' + day;
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+      if (hour.length < 2) hour = '0' + hour;
+      if (minute.length < 2) minute = '0' + minute;
 
       return [day, month, year].join('-') + " " + [hour, minute].join(":");
-    }
+    },
+    formatTreatments(treatments) {
+      return treatments.join(', ').replace(/, ([^,]*)$/, ' en $1');
+    },
   },
 };
 </script>
@@ -153,6 +153,6 @@ export default {
   display: flex;
   width: 100vw;
   justify-content: center;
-}
+  }
 }
 </style>
