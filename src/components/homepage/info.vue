@@ -1,6 +1,7 @@
 <template>
-<div class=divider>
-    <img id= "divider" src="../../assets/divider.jpg" alt="">
+<div class="divider">
+    <img src="../../assets/schaar.png" alt="">
+    <hr>
 </div>
 <section class="info-old">
     <div class="row-old">
@@ -49,14 +50,22 @@ export default {
 }
 </script>
 <style>
-#divider{
-    min-height: 7.5vh;
-    width: 80%;
-    margin: 30px;
-    margin-right: 100px;
-}
 .divider{
     text-align: center;
+}
+.divider > hr {
+    margin-left: 70px;
+    margin-right: 70px;
+    position: relative;
+    top: -86px;
+    border: none;
+    border-top: 5px dotted black;
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    height: 1px;
+}
+.divider > img{
+    height: 160px;
 }
 .row-old{
     display: flex;
