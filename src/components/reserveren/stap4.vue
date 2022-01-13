@@ -23,7 +23,7 @@
             <div>Datum: {{ formatDate(date) }}</div>
           </div>
           <div class="info">
-            <div>Bijzonderheden: {{ user_data.extra ?  + user_data.extra : "Geen bijzonderheden."}}</div>
+            <div>Bijzonderheden: {{ user_data.extra ? user_data.extra : "Geen bijzonderheden."}}</div>
           </div>
         </div>
       </div>
@@ -70,13 +70,13 @@ export default {
       let state = this.$store.state;
       let newState = {};
 
-      Object.keys(state).forEach((key) => {
+      Object.keys(state).forEach(key => {
         newState[key] = null;
       });
       alert('U ontvangt zo snel mogelijk een bevestegings mail')
-      newState['current_step'] = 1
 
       this.$store.replaceState(newState);
+      this.$router.push('/');
     },
     formatDate(date) {
       var d = new Date(date),
@@ -113,6 +113,7 @@ export default {
   border-radius: 5px;
   background-color: #1e92df3b;
   margin-top: 0.2em;
+  padding: 5px;
   word-wrap: break-word;
   width: 40vw;
 }

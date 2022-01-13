@@ -10,7 +10,6 @@
             type="text"
             placeholder="Jouw naam hier"
             v-model="personId"
-            required
           />
         </div>
         <div class="info">
@@ -20,7 +19,6 @@
             type="email"
             placeholder="voorbeeld@yourmail.com"
             v-model="email"
-            required
           />
         </div>
         <div class="info">
@@ -104,7 +102,7 @@ export default {
         this.nextPage()
         if (event) event.preventDefault();
       } else {
-        alert('Naam of mail is niet gedeldig')
+        alert('Naam of email is niet gedeldig')
       }
     },
     nextPage() {
