@@ -35,25 +35,3 @@ const store = createStore({
 });
 
 export default store;
-
-/*
-    state: {
-        appointment: {
-            current_step: 1,
-            treatments: [wassen, knippen, kleuren],
-            date: [{}],
-            barber: 'Jantje',
-            user_data: {
-                name: 'Piet',
-                telnr: '0684848432',
-                email: 'piet@jandekapper.nl'
-            }
-        },
-        products: {
-            [
-                ...
-            ]
-        },
-        ...
-    }
-*/

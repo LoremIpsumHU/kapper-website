@@ -67,7 +67,8 @@ export default {
       this.$store.commit('UPDATE_FORM_DATA', {
         data: this.treatments
       })
-      if (this.treatments == 'Niks');
+      if (this.treatments == 'Niks')
+        alert('Voeg een behandeling toe')
       else this.setTreatments()
     },
     setTreatments() {

@@ -1,61 +1,66 @@
 <template>
   <div>
     <stappenplan></stappenplan>
-    <form id="sector1" class="row">
-      <div>
-        <div class="info">
-          <div class="required">Naam:</div>
-          <input
-            class="input"
-            type="text"
-            placeholder="Jouw naam hier"
-            v-model="personId"
-          />
+    <form>
+      <div class="row">
+        <div id="sector1">
+          <div>
+            <div class="info">
+              <div class="required">Naam:</div>
+              <input
+                class="input"
+                type="text"
+                placeholder="Jouw naam hier"
+                v-model="personId"
+                required
+              />
+            </div>
+            <div class="info">
+              <div class="required">Mail adress:</div>
+              <input
+                class="input"
+                type="email"
+                placeholder="voorbeeld@yourmail.com"
+                v-model="email"
+                required
+              />
+            </div>
+            <div class="info">
+              <div>Telefoon nummer:</div>
+              <input
+                class="input"
+                type="tel"
+                placeholder="06 1234 5678"
+                v-model="number"
+              />
+            </div>
+          </div>
         </div>
-        <div class="info">
-          <div class="required">Mail adress:</div>
-          <input
-            class="input"
-            type="email"
-            placeholder="voorbeeld@yourmail.com"
-            v-model="email"
-          />
-        </div>
-        <div class="info">
-          <div>Telefoon nummer:</div>
-          <input
-            class="input"
-            type="number"
-            placeholder="06 1234 5678"
-            v-model="number"
-          />
-        </div>
+          <div id="bijzonderheden">
+            <div>Bijzonderheden:</div>
+            <textarea
+              class="input"
+              id="specialinput"
+              type="text"
+              v-model="extra"
+              placeholder="Vul hier bijzonderheden in waar wij rekening mee moeten houden"
+            ></textarea>
+          </div>
       </div>
-
-      <div id="bijzonderheden">
-        <div>Bijzonderheden:</div>
-        <textarea
-          class="input"
-          id="specialinput"
-          type="text"
-          v-model="extra"
-          placeholder="Vul hier bijzonderheden in waar wij rekening mee moeten houden"
-        ></textarea>
-      </div>
+      <div id="sector2">
+        <nextpage
+          content="Vorige"
+          styling="next"
+          @click="this.$store.commit('subtracked')"
+        ></nextpage>
+        <nextpage
+          type="submit"
+          content="Volgende"
+          styling="next"
+          @click.prevent="valid()"
+        ></nextpage>
+      </div>      
     </form>
-    <div id="sector2">
-      <nextpage
-        content="Vorige"
-        styling="next"
-        @click="this.$store.commit('subtracked')"
-      ></nextpage>
-      <nextpage
-        type="submit"
-        content="Volgende"
-        styling="next"
-        @click="valid()"
-      ></nextpage>
-    </div>
   </div>
 </template>
 
@@ -84,13 +89,13 @@ export default {
 
   validations() {
     return {
-      personId: { required, minLength: minLength(2) },
+      personId: { required, minLength: minLength(1) },
       email: { required, email },
     }
   },
 
   methods: {
-    valid(event) {
+    valid() {
       this.v$.$validate()
       if (!this.v$.$error) {
 
@@ -99,15 +104,13 @@ export default {
         this.$store.state.user_data.number = this.number
         this.$store.state.user_data.extra = this.extra
         
+        
         this.nextPage()
-        if (event) event.preventDefault();
-      } else {
-        alert('Naam of email is niet gedeldig')
       }
     },
     nextPage() {
       this.$store.commit("increment")
-    }
+    },
   },
 };
 </script>
