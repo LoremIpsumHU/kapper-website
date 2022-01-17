@@ -1,5 +1,6 @@
 <template>
 <div class="divider">
+    <h2>Over de zaak</h2>
     <img src="../../assets/schaar.png" alt="">
     <hr>
 </div>

@@ -1,8 +1,8 @@
 <template>
 <div>
   <hero></hero>
-  <info></info>
   <kapsels></kapsels>
+  <info></info>
 </div>
 </template>
 

@@ -22,13 +22,14 @@ export default {
 <style>
 .divider > h2{
     font-size: 60px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 70px 0px;
+    margin-bottom: 50px;
 }
 .container > img{
     justify-self: center;
@@ -36,6 +37,7 @@ export default {
     width: 420px;
     background-size: cover;
     border-radius: 15px;
+
 }
 
 </style>

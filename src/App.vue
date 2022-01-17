@@ -3,11 +3,10 @@
     <nav>
       <div class="navbar">
         <ul>
-          <li><a><router-link to="/">Producten</router-link></a></li>
+          <li><a><router-link to="/">Home</router-link></a></li>
           <li><a><router-link to="/reserveren">Reserveren</router-link></a></li>
         </ul>        
       </div>
-
     </nav>
     <router-view />
   </div>
@@ -16,12 +15,9 @@
 <script> 
 export default {
   components:{
-
   },
-
   data(){
-    return{
-        
+    return{    
     }
   },
   computed: {
@@ -62,6 +58,7 @@ nav{
 .navbar ul li a{
     color: #CF4D36;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 45px;
+    font-weight: bold;
 }
 </style>
