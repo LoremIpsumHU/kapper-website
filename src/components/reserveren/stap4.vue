@@ -38,7 +38,7 @@
         @click="this.$store.commit('subtracked')"
       ></nextpage>
       <nextpage
-        @click="handleSubmit()"
+        @click="sendApi(), handleSubmit()"
         content="Verstuur"
         styling="next"
       ></nextpage>
@@ -50,6 +50,7 @@
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import { mapState } from "vuex";
+import axios from 'axios';
 
 export default {
   components: {
@@ -96,6 +97,17 @@ export default {
     formatTreatments(treatments) {
       return treatments.join(', ').replace(/, ([^,]*)$/, ' en $1');
     },
+    sendApi() {
+      axios.post("http://localhost:3000/appointments",{
+      naam:this.$store.state.user_data.personId,
+      email:this.$store.state.user_data.email,
+      number:this.$store.state.user_data.number,
+      extra:this.$store.state.user_data.extra,
+      barber:this.$store.state.barber,
+      treatments:this.$store.state.treatments,
+      date:this.$store.state.date,
+      })
+    }
   },
 };
 </script>
