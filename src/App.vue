@@ -3,7 +3,7 @@
     <nav>
       <div class="navbar">
         <ul>
-          <li><a><router-link to="/">Producten</router-link></a></li>
+          <li><a><router-link to="/">Home</router-link></a></li>
           <li><a><router-link to="/reserveren">Reserveren</router-link></a></li>
         </ul>        
       </div>
@@ -17,7 +17,7 @@ export default {
   components:{
 
   },
-
+  
   data(){
     return{
         

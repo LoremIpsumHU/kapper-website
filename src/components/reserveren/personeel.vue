@@ -1,13 +1,12 @@
 <template>
   <div id="colmn" class="unselectable">
     <div id="col">
-      <div id="Alisha" class="card " @click="setKapper('Alisha')">
-        <img src="../../assets/Alisha.png" alt="Alisha">
+      <div id="Tobias" class="card" @click="setKapper('Tobias')">
+        <img src="../../assets/Tobias.png" alt="Tobias">
         <div class="card-info">
-          <div class="names">Alisha</div>
-          <div class="info">Puntjes bij knippen <br> Stagair -10%</div>
+          <div class="names">Tobias</div>
+          <div class="info">Baarden specialist</div>
         </div>
-          
       </div>
       <div id="Kevin" class="card under" @click="setKapper('Kevin')">
         <img src="../../assets/Kevin.png" alt="Kevin">
@@ -26,11 +25,11 @@
           <div class="info">Dames <br> Praten</div>
         </div>
       </div>
-      <div id="Tobias" class="card under" @click="setKapper('Tobias')">
-        <img src="../../assets/Tobias.png" alt="Tobias">
+      <div id="Alisha" class="card under" @click="setKapper('Alisha')">
+        <img src="../../assets/Alisha.png" alt="Alisha">
         <div class="card-info">
-          <div class="names">Tobias</div>
-          <div class="info">Baarden specialist</div>
+          <div class="names">Alisha</div>
+          <div class="info">Puntjes bij knippen <br> Stagair -10%</div>
         </div>
       </div>
     </div>

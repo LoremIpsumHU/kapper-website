@@ -13,7 +13,7 @@ const store = createStore({
         },
         barber: '',
         treatments: [],
-        date: [{  }],
+        date: '',
     },
     getters:{
 
@@ -26,8 +26,8 @@ const store = createStore({
             state.current_step--
         },
         UPDATE_FORM_DATA(state, value) {
-            state.forms[value.form] = value.data;
-        }
+            state.treatments = value.data
+        },
     },
     actions:{
         
@@ -35,25 +35,3 @@ const store = createStore({
 });
 
 export default store;
-
-/*
-    state: {
-        appointment: {
-            current_step: 1,
-            treatments: [wassen, knippen, kleuren],
-            date: [{}],
-            barber: 'Jantje',
-            user_data: {
-                name: 'Piet',
-                telnr: '0684848432',
-                email: 'piet@jandekapper.nl'
-            }
-        },
-        products: {
-            [
-                ...
-            ]
-        },
-        ...
-    }
-*/

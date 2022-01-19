@@ -1,6 +1,6 @@
 <template>
     <div id="dropdown" class="unselectable">
-        <multiselect v-model="Value" mode="tags" :closeOnSelect="false" :searchable="true" :ceateTag='true' :options="[
+        <multiselect v-model="Value" mode="multple" :closeOnSelect="false" :searchable="true" :ceateTag='true' :options="[
           {value: 'Knippen', label: 'Knippen'},
           {value: 'Kleuren', label: 'Kleuren'},
           {value: 'Wassen', label: 'Wassen'},

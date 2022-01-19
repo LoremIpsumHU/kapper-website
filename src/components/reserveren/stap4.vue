@@ -4,35 +4,30 @@
     <div id="sector1" class="row">
       <div class="left">
         <div class="costumerinfo">
-          <div class="row1 info">
-            <div>Naam:</div>
-            <div> {{ user_data.personId }}</div>
+          <div class="info">
+            <div>Naam: {{ user_data.personId }}</div>
           </div>
-          <div class="row1 info">
-            <div>Mail adress:</div>
-            <div>{{ user_data.email }}</div>
+          <div class="info">
+            <div>Mail adress: {{ user_data.email }}</div>
           </div>
-          <div class="row1 info">
-            <div>Telefoon nummer:</div>
-            <div>{{ user_data.number }}</div>
+          <div class="info">
+            <div>Telefoon nummer: {{ user_data.number ? user_data.number : "Geen telefoonnummer." }}</div>
           </div>
-          <div class="costumerbarber row1 info">
-            <div>Kapper:</div>
-            <div>{{ barber }}</div>
+          <div class="info">  
+            <div>Behandelingen: {{ formatTreatments(treatments) }}</div>
           </div>
-          <div class="Bijzonder info">
-            <div>Bijzonderheden:</div>
-            <div class="row1">{{ user_data.extra }}</div>
+          <div class="info">
+            <div>Kapper: {{ barber ? barber : "Geen voorkeur." }}</div>
           </div>
-          <div class="costumerdatum info">
-            <div class="row1">
-              <div>Jaar:</div>
-              <div>{{ date }}</div>
-            </div>
+          <div class="info">  
+            <div>Datum: {{ formatDate(date) }}</div>
+          </div>
+          <div class="info">
+            <div>Bijzonderheden: {{ user_data.extra ? user_data.extra : "Geen bijzonderheden."}}</div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="center">
         <iframe class="kaart" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2451.747387001234!2d5.173788551309156!3d52.084328279634605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6693e9a2d0c9f%3A0xa9867c6558813da4!2sHogeschool%20Utrecht%2C%20Heidelberglaan%2015%2C%203584%20CS%20Utrecht!5e0!3m2!1snl!2snl!4v1639135059025!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </div>
@@ -43,12 +38,11 @@
         @click="this.$store.commit('subtracked')"
       ></nextpage>
       <nextpage
-        @click="handleSubmit()"
+        @click="sendApi(), handleSubmit()"
         content="Verstuur"
         styling="next"
       ></nextpage>
     </div>
-    <div>{{forms}}</div>
   </div>
 </template>
 
@@ -56,6 +50,7 @@
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import { mapState } from "vuex";
+import axios from 'axios';
 
 export default {
   components: {
@@ -68,22 +63,51 @@ export default {
   computed: mapState({
     user_data: "user_data",
     barber: "barber",
-    date: '',
-    // treatments:''
+    date: "date",
+    treatments:'treatments'
   }),
   methods: {
     handleSubmit() {
       let state = this.$store.state;
       let newState = {};
 
-      Object.keys(state).forEach((key) => {
+      Object.keys(state).forEach(key => {
         newState[key] = null;
       });
-      newState['current_step'] = 1
+      alert('U ontvangt zo snel mogelijk een bevestegings mail')
 
       this.$store.replaceState(newState);
-      console.log("submitted");
+      this.$router.push('/');
     },
+    formatDate(date) {
+      var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear(),
+      hour = '' + d.getHours(),
+      minute = '' + d.getMinutes();
+
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+      if (hour.length < 2) hour = '0' + hour;
+      if (minute.length < 2) minute = '0' + minute;
+
+      return [day, month, year].join('-') + " " + [hour, minute].join(":");
+    },
+    formatTreatments(treatments) {
+      return treatments.join(', ').replace(/, ([^,]*)$/, ' en $1');
+    },
+    sendApi() {
+      axios.post("http://localhost:3000/appointments",{
+      naam:this.$store.state.user_data.personId,
+      email:this.$store.state.user_data.email,
+      number:this.$store.state.user_data.number,
+      extra:this.$store.state.user_data.extra,
+      barber:this.$store.state.barber,
+      treatments:this.$store.state.treatments,
+      date:this.$store.state.date,
+      })
+    }
   },
 };
 </script>
@@ -101,16 +125,14 @@ export default {
   border-radius: 5px;
   background-color: #1e92df3b;
   margin-top: 0.2em;
-}
-
-.left {
+  padding: 5px;
+  word-wrap: break-word;
   width: 40vw;
 }
 
 .kaart {
-  margin-top: 1em;
   width: 40vw;
-  height: 40vh;
+  height: 50vh;
 }
 .center {
   display: flex;
@@ -134,10 +156,16 @@ export default {
     font-size: 1em;
   }
   .kaart {
-    width: 90vw;
+    margin-top: 10px;
+    width: 80vw;
+  }
+  .info {
+    width: 80vw;
   }
   .left {
-    width: 80vw;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
   }
 }
 </style>
