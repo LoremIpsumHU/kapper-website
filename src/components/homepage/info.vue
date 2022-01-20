@@ -137,8 +137,11 @@ h1{
     font-size: 29px;
     text-shadow: 3px 3px 4px #00000056;
 }
-
-p{
+.infobox-new > p{
+    padding: 30px;
+    font-size: 25px;
+}
+.infobox-old > p{
     padding: 30px;
     font-size: 25px;
 }

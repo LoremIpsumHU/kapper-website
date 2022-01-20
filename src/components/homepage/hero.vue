@@ -3,7 +3,7 @@
         <section class="header main" id="header">
 
         <div>
-            <img id="logo" src="../../assets/jdklogo.svg" alt="Logo jdk">
+            <img id="logo" src="../../assets/jdklogowhite.svg" alt="Logo jdk">
         </div>
 
         </section>
