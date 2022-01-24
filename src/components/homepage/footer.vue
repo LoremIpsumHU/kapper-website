@@ -12,7 +12,7 @@
         </div>
         <div class="right">
             <h6>Contact</h6>
-            <p> Email: <br> Jan@dekapper.nl <br> <br>
+            <p> Email: <br> Jan@jandekapper.nl <br> <br>
             Telefoon: <br> +31 6 12345678
             </p>
         </div>

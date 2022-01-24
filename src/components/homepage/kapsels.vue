@@ -25,7 +25,6 @@ export default {
     font-size: 60px;
     margin-top: 80px;
 }
-
 .container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);

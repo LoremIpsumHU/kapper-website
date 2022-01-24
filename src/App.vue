@@ -26,7 +26,6 @@ export default {
   computed: {
 
   },
-  
 }
 </script>
 
@@ -35,13 +34,11 @@ export default {
   font-family: 'Poppins', sans-serif;
   margin: 0 0;
 }
-
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .navbar{
     flex: 1;
     text-align: right;
@@ -50,14 +47,12 @@ nav{
     left: 10px;
     z-index: 1000000;
 }
-
 .navbar ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 50px;
     position: relative;
 }
-
 .navbar ul li a{
     color: #CF4D36;
     text-decoration: none;

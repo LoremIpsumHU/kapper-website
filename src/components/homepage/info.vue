@@ -90,7 +90,7 @@ export default {
 .sidebox-old{
     flex-basis: 20%;
     background: #50C4E9;
-    height: 29px;
+    width: 10ch;
     padding: 20px;
     align-self: center;
 }
@@ -121,7 +121,7 @@ export default {
 .sidebox-new{
     flex-basis: 20%;
     background: #50C4E9;
-    height: 29px;
+    width: 10ch;
     padding: 20px;
     align-self: center;
 }
