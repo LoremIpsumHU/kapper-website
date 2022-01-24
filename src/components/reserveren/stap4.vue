@@ -38,7 +38,7 @@
         @click="this.$store.commit('subtracked')"
       ></nextpage>
       <nextpage
-        @click="sendApi(), handleSubmit()"
+        @click="handleSubmit()"
         content="Verstuur"
         styling="next"
       ></nextpage>
@@ -74,10 +74,23 @@ export default {
       Object.keys(state).forEach(key => {
         newState[key] = null;
       });
-      alert('U ontvangt zo snel mogelijk een bevestegings mail')
 
-      this.$store.replaceState(newState);
-      this.$router.push('/');
+      axios.post(process.env.VUE_APP_ROOT_API,{
+      naam:this.$store.state.user_data.personId,
+      email:this.$store.state.user_data.email,
+      number:this.$store.state.user_data.number,
+      extra:this.$store.state.user_data.extra,
+      barber:this.$store.state.barber,
+      treatments:this.$store.state.treatments,
+      date:this.$store.state.date,
+      }).then((response) => {
+        alert('U ontvangt zo snel mogelijk een bevestegings mail.');
+
+        this.$store.replaceState(newState);
+        this.$router.push('/');
+      }).catch((err) => {
+        alert('Er is iets fout gegaan, probeer het later opnieuw.')
+      });
     },
     formatDate(date) {
       var d = new Date(date),
@@ -97,17 +110,6 @@ export default {
     formatTreatments(treatments) {
       return treatments.join(', ').replace(/, ([^,]*)$/, ' en $1');
     },
-    sendApi() {
-      axios.post("http://localhost:3000/appointments",{
-      naam:this.$store.state.user_data.personId,
-      email:this.$store.state.user_data.email,
-      number:this.$store.state.user_data.number,
-      extra:this.$store.state.user_data.extra,
-      barber:this.$store.state.barber,
-      treatments:this.$store.state.treatments,
-      date:this.$store.state.date,
-      })
-    }
   },
 };
 </script>
