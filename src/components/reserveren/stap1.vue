@@ -6,18 +6,18 @@
       <div class="col">
         <div class="kopje">Jouw gekozen behandelingen</div>
         <div id="dropdown" class="unselectable">
-            <multiselect
-              v-model="treatments"
-              mode="tags"
-              placeholder="Kies uw behandeling"
-              :searchable="true"
-              :createTag="false"
-              :closeOnSelect="false"
-              :options="options"
-              class="multiselect-blue"
-            >
-            </multiselect>
-        </div>        
+          <multiselect
+            v-model="treatments"
+            mode="tags"
+            placeholder="Kies uw behandeling"
+            :searchable="true"
+            :createTag="false"
+            :closeOnSelect="false"
+            :options="options"
+            class="multiselect-blue"
+          >
+          </multiselect>
+        </div>
         <div class="text">U kunt meerdere behandelingen toevoegen</div>
       </div>
       <div class="col">
@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 import stappenplan from "./stappenplan.vue";
 import dropdownmenu from "./dropdownmenu.vue";
 import nextpage from "./nextpage.vue";
-import multiselect from '@vueform/multiselect';
-import { notify } from "@kyvg/vue3-notification"
+import multiselect from "@vueform/multiselect";
+import { notify } from "@kyvg/vue3-notification";
 
 export default {
   components: {
@@ -54,28 +54,27 @@ export default {
 
   data() {
     return {
-      treatments: ['Niks'],
-      options: ['Knippen', 'Kleuren', 'Wassen']
-      
+      treatments: ["Niks"],
+      options: ["Knippen", "Kleuren", "Wassen"],
     };
   },
   computed: {
-    ...mapState ({
-      data: state => state.treatments
-    })
+    ...mapState({
+      data: (state) => state.treatments,
+    }),
   },
   methods: {
     updateData() {
-      this.$store.commit('UPDATE_FORM_DATA', {
-        data: this.treatments
-      })
-      if (this.treatments == 'Niks')
+      this.$store.commit("UPDATE_FORM_DATA", {
+        data: this.treatments,
+      });
+      if (this.treatments == "Niks")
         this.$notify({ type: "error", text: "Kies een behandeling" });
-      else this.setTreatments()
+      else this.setTreatments();
     },
     setTreatments() {
-      this.$store.commit('increment')
-    }
+      this.$store.commit("increment");
+    },
   },
 };
 </script>
@@ -117,17 +116,17 @@ export default {
   justify-content: center;
 }
 
-#dropdown{
+#dropdown {
   margin-top: 1em;
 }
 
 .multiselect-blue {
-  --ms-tag-bg: #DBEAFE;
-  --ms-tag-color: #3498DB;
-  --ms-border-color: #3498DB;
-  --ms-dropdown-border-color: #3498DB;
-  --ms-option-bg-selected: #3498DB;
-  --ms-option-color-selected-disabled: #3498DB;
+  --ms-tag-bg: #dbeafe;
+  --ms-tag-color: #3498db;
+  --ms-border-color: #3498db;
+  --ms-dropdown-border-color: #3498db;
+  --ms-option-bg-selected: #3498db;
+  --ms-option-color-selected-disabled: #3498db;
 }
 
 .multiselect.is-active {
@@ -135,13 +134,13 @@ export default {
 }
 
 .unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {
@@ -159,8 +158,14 @@ export default {
     margin-left: 5px;
     margin-right: 5px;
   }
+
+  #selecteren {
+    display: none;
+  }
+  .col {
+    width: 90vw;
+  }
 }
 </style>
 
-<style src="@vueform/multiselect/themes/default.css">
-</style>
+<style src="@vueform/multiselect/themes/default.css"></style>
