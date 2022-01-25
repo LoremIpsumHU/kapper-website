@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @keyup.enter="handleSumbit()">
     <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">

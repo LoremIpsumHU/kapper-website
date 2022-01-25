@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @keyup.enter="valid()">
     <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <form>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @keyup.enter="updateData()">
     <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
