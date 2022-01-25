@@ -33,6 +33,10 @@ export default {
   width: 15vw;
 }
 
+.btn:hover {
+  background-color: #b4432f;
+}
+
 @media screen and (max-width: 400px)  {
   .btn {
     font-size: 0.7rem;

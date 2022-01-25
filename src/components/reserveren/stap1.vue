@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
       <div class="col">
@@ -41,6 +42,7 @@ import stappenplan from "./stappenplan.vue";
 import dropdownmenu from "./dropdownmenu.vue";
 import nextpage from "./nextpage.vue";
 import multiselect from '@vueform/multiselect';
+import { notify } from "@kyvg/vue3-notification"
 
 export default {
   components: {
@@ -68,7 +70,7 @@ export default {
         data: this.treatments
       })
       if (this.treatments == 'Niks')
-        alert('Voeg een behandeling toe')
+        this.$notify({ type: "error", text: "Kies een behandeling" });
       else this.setTreatments()
     },
     setTreatments() {
@@ -161,5 +163,4 @@ export default {
 </style>
 
 <style src="@vueform/multiselect/themes/default.css">
-/* https://www.npmjs.com/package/@vueform/multiselect */
 </style>

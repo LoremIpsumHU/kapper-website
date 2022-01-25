@@ -1,5 +1,6 @@
 <template>
   <div>
+    <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
       <div class="left">
@@ -8,7 +9,7 @@
             <div>Naam: {{ user_data.personId }}</div>
           </div>
           <div class="info">
-            <div>Mail adress: {{ user_data.email }}</div>
+            <div>Mail adres: {{ user_data.email }}</div>
           </div>
           <div class="info">
             <div>Telefoon nummer: {{ user_data.number ? user_data.number : "Geen telefoonnummer." }}</div>
@@ -51,6 +52,7 @@ import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import { mapState } from "vuex";
 import axios from 'axios';
+import { notify } from "@kyvg/vue3-notification"
 
 export default {
   components: {
@@ -84,12 +86,12 @@ export default {
       treatments:this.$store.state.treatments,
       start_time:new Date(this.$store.state.date).toISOString(),
       }).then((response) => {
-        alert('U ontvangt zo snel mogelijk een bevestegings mail.');
+        this.$notify({ type: "error", text: "Uw afspraak is aangekomen bij de kapper" });
 
         this.$store.replaceState(newState);
         this.$router.push('/');
       }).catch((err) => {
-        alert('Er is iets fout gegaan, probeer het later opnieuw.')
+        this.$notify({ type: "error", text: "Er is iets fout gegaan probeer het opniew" });
       });
     },
     formatDate(date) {
