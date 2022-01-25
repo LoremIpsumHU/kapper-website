@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div @keyup.enter="setDate()">
+    <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
       <div class="datepicker">
@@ -38,6 +39,7 @@ import { mapState } from 'vuex'
 import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import personeel from "./personeel.vue";
+import { notify } from "@kyvg/vue3-notification"
 
 export default {
   components: {
@@ -56,8 +58,13 @@ export default {
   
   methods: {
     setDate (){
-      this.$store.state.date = this.date.getTime()
-      this.$store.commit('increment')
+      if (this.date !== null){
+        this.$store.state.date = this.date.getTime()
+        this.$store.commit('increment')
+      }
+      else {
+        this.$notify({ type: "error", text: "Er is iets fout gegaan probeer opnieuw" });
+      }
     },
     pageBack (event){
       if (event) event.preventDefault();
@@ -82,6 +89,7 @@ export default {
 }
 
 #sector1 {
+  align-items: center;
   height: 50vh;
 }
 

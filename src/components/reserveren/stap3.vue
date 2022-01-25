@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div @keyup.enter="valid()">
+    <notifications position="bottom right"></notifications>
     <stappenplan></stappenplan>
     <form>
       <div class="row">
@@ -16,7 +17,7 @@
               />
             </div>
             <div class="info">
-              <div class="required">Mail adress:</div>
+              <div class="required">Mail adres:</div>
               <input
                 class="input"
                 type="email"
@@ -69,6 +70,7 @@ import Stappenplan from "./stappenplan.vue";
 import Nextpage from "./nextpage.vue";
 import useVuelidate from '@vuelidate/core';
 import { required, email, minLength } from '@vuelidate/validators';
+import { notify } from "@kyvg/vue3-notification"
 
 export default {
   components: {
@@ -107,7 +109,13 @@ export default {
         
         this.nextPage()
       }
+      else {
+        if (this.personId.length < 1)
+          return this.$notify({ type: "error", text: "Voer een naam in" });
+        this.$notify({ type: "error", text: "Voer een geldig email adres in" });
+      }
     },
+
     nextPage() {
       this.$store.commit("increment")
     },
@@ -133,6 +141,7 @@ export default {
 .info {
   margin-top: 2em;
 }
+
 .required:after {
   content: " *";
   color: #f13615;
