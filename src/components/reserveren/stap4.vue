@@ -75,14 +75,14 @@ export default {
         newState[key] = null;
       });
 
-      axios.post(process.env.VUE_APP_ROOT_API,{
-      naam:this.$store.state.user_data.personId,
+      axios.post('https://dev-api.jandekapper.nl/appointments',{
+      name:this.$store.state.user_data.personId,
       email:this.$store.state.user_data.email,
-      number:this.$store.state.user_data.number,
-      extra:this.$store.state.user_data.extra,
-      barber:this.$store.state.barber,
+      phone:this.$store.state.user_data.number,
+      comment:this.$store.state.user_data.extra,
+      barber_name:this.$store.state.barber,
       treatments:this.$store.state.treatments,
-      date:this.$store.state.date,
+      start_time:new Date(this.$store.state.date).toISOString(),
       }).then((response) => {
         alert('U ontvangt zo snel mogelijk een bevestegings mail.');
 
