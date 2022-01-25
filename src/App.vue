@@ -71,4 +71,13 @@ nav{
     font-size: 25px;
   }
 }
+
+.vue-notification {
+  font-size: 1.3em !important;
+  color: black !important;
+}
+
+.vue-notification.error {
+    background: #ff7970 !important;
+}
 </style>
