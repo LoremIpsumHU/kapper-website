@@ -89,6 +89,7 @@ export default {
 }
 
 #sector1 {
+  align-items: center;
   height: 50vh;
 }
 
