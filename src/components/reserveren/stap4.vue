@@ -86,7 +86,7 @@ export default {
       treatments:this.$store.state.treatments,
       start_time:new Date(this.$store.state.date).toISOString(),
       }).then((response) => {
-        this.$notify({ type: "error", text: "Uw afspraak is aangekomen bij de kapper" });
+        this.$notify({ type: "success", text: "Uw afspraak is aangekomen bij de kapper" });
 
         this.$store.replaceState(newState);
         this.$router.push('/');
