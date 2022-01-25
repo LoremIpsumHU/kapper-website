@@ -20,10 +20,27 @@ export default {
     
 }
 </script>
-<style>
+<style scoped>
 .divider > h2{
     font-size: 60px;
-    margin-top: 80px;
+    margin-top: 50px;
+}
+.divider > hr {
+    margin-left: 70px;
+    margin-right: 70px;
+    position: relative;
+    top: -86px;
+    border: none;
+    border-top: 5px dotted black;
+    color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 255, 255, 0);
+    height: 1px;
+}
+.divider > img{
+    height: 160px;
+}
+.divider{
+    text-align: center;
 }
 .container{
     display: grid;
@@ -39,5 +56,16 @@ export default {
     border-radius: 15px;
 
 }
-
+@media only screen and (max-width: 1260px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1em;
+    grid-row-gap: 100px;
+  }
+  .container > img{
+    height: 220px;
+    width: 320px;
+  }
+}
 </style>

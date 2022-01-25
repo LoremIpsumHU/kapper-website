@@ -1,5 +1,5 @@
   <template>
-    <div>
+    <div class="alles">
         <section class="main" id="header">
         <div>
             <img id="logo" src="../../assets/jdklogowhite.svg" alt="Logo jdk">
@@ -25,7 +25,6 @@ export default {
 }
 .main{
     min-height: 100vh;
-    width: 100%;
     background-image: linear-gradient(rgba(68, 74, 129, 0.336),
     rgba(255, 255, 255, 0.178)),url(../../assets/kap.png);
     background-position: center;
@@ -38,13 +37,30 @@ export default {
   margin-top: 180px;
 }
 .res-button {
-  font-size: 56px;
-  border: white solid 1px;
+  font-size: 40px;
+  border: white solid 3px;
   padding: 20px;
   text-decoration: none;
   color: white;
 }
+.res-button:hover {
+  background-color: #CF4D36;
+  transition-duration: 0.4s;
+}
 .link {
   text-decoration: none;
+}
+.alles {
+    box-shadow: 0px 3px 10px rgb(36, 36, 36);
+}
+@media(max-width: 1000px){
+  #logo{
+    width: 100%;
+    height: 170px;
+  }
+  .res-button{
+    font-size: 26px;
+    border: white solid 1.5px;
+  }
 }
 </style>

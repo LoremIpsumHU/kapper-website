@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="divider">
+    <div class="info">
+        <div class="divider2">
             <h2>Over de zaak</h2>
             <img src="../../assets/schaar.png" alt="">
             <hr>
@@ -9,11 +9,11 @@
             <div class="row-old">
                 <div class="infobox-old">
                     <P>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et posuere nulla.
-                    Aenean ullamcorper mollis dui nec viverra. Nam eu feugiat odio. Aliquam orci justo,
-                    molestie at lectus ac, malesuada aliquam diam. Suspendisse ut mauris quis eros aliquam
-                    fermentum. Pellentesque sed lectus vitae lorem pretium pretium vitae vitae tortor. In 
-                    elementum vitae sapien vel tempus. Orci varius natoque 
+                        Toen de zaak jan de kapper kwam heb ik jan, de zaak overgenomen van mijn opa.
+                         Hij is deze zaak begonnen in 1892 op 21 september. De zaak was toen nog klein en er 
+                         konden net 3 mensen in de zaak om geknipt en gewassen te worden.
+                         Toen ik ongeveer 16 werd begon ik ook de meeste mensen te knippen in de zaak van mijn opa. Dit vond ik leuk en
+                         uiteindelijk heb ik het van hem overgenomen
                     </P>
                 </div>
                 <div class="old-img"></div>
@@ -35,11 +35,12 @@
                 <div class="new-img"></div>
                 <div class="infobox-new">
                     <P>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas et posuere nulla.
-                    Aenean ullamcorper mollis dui nec viverra. Nam eu feugiat odio. Aliquam orci justo,
-                    molestie at lectus ac, malesuada aliquam diam. Suspendisse ut mauris quis eros aliquam
-                    fermentum. Pellentesque sed lectus vitae lorem pretium pretium vitae vitae tortor. In 
-                    elementum vitae sapien vel tempus. Orci varius natoque 
+                         Ondertussen heb ik de zaak al 30 jaar overgenomen. 
+                         We hebben de modernste apparaten om snel en goed genkipt 
+                         te worden. Daarnaast bieden wij nu ook stylen en haar kleuren 
+                         aan. Wil je zonder al te veel moeite een kappersafspraak in je pauze? 
+                         Maak dan nu snel een afspraak.
+
                     </P>
                 </div>
             </div>
@@ -52,11 +53,15 @@ export default {
     
 }
 </script>
-<style>
-.divider{
+<style scoped>
+.divider2 > h2{
+    font-size: 60px;
+    margin-top: 80px;
+}
+.divider2{
     text-align: center;
 }
-.divider > hr {
+.divider2 > hr {
     margin-left: 70px;
     margin-right: 70px;
     position: relative;
@@ -67,7 +72,7 @@ export default {
     background-color: rgba(255, 255, 255, 0);
     height: 1px;
 }
-.divider > img{
+.divider2 > img{
     height: 160px;
 }
 .row-old{
@@ -133,7 +138,11 @@ export default {
     border-radius: 20px;
     border: 7px solid #50C4E9;
 }
-h1{
+.sidebox-new > h1{
+    font-size: 29px;
+    text-shadow: 3px 3px 4px #00000056;
+}
+.sidebox-old > h1{
     font-size: 29px;
     text-shadow: 3px 3px 4px #00000056;
 }
@@ -144,5 +153,10 @@ h1{
 .infobox-old > p{
     padding: 30px;
     font-size: 25px;
+}
+@media(max-width: 920px){
+    *{
+        display: none;
+    }
 }
 </style>
