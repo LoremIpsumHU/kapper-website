@@ -40,7 +40,7 @@ export default {
 @media screen and (max-width: 400px)  {
   .btn {
     font-size: 0.7rem;
-    width: 15ch;
+    width: 25ch;
   }
 }
 </style>

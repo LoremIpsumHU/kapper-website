@@ -165,5 +165,27 @@ export default {
   display: flex;
   justify-content: center;
   gap: 1em;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width:600px) {
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+  }
+
+  .input {
+    width: 90vw;
+  }
+
+  #sector1 {
+    height: 40vh;
+  }
+
+  #specialinput {
+    width: 90vw;
+  }
 }
 </style>
