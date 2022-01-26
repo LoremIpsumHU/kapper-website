@@ -1,6 +1,6 @@
 <template>
   <div @keyup.enter="updateData()">
-    <notifications position="right"></notifications>
+    <notifications position="top right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
       <div class="col">
