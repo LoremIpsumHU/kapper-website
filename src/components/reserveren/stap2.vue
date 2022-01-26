@@ -1,6 +1,6 @@
 <template>
   <div @keyup.enter="setDate()">
-    <notifications position="bottom right"></notifications>
+    <notifications position="top right"></notifications>
     <stappenplan></stappenplan>
     <div id="sector1" class="row">
       <div class="datepicker">

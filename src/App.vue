@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications position="top right"></notifications>
     <nav>
       <div class="navbar">
         <ul>
@@ -12,7 +13,9 @@
   </div>
 </template>
 
-<script> 
+<script>
+import { notify } from "@kyvg/vue3-notification"
+
 export default {
   components:{
 
